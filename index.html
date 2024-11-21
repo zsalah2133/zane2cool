@@ -1,1164 +1,1239 @@
-
-<html>
-<!-- (c) Layout created by leo ⛧ (https://layouts.spacehey.com/layout?id=3840) -->
-
 <style>
-/* profile background/the image behind the profile box */
-body { 
-background: url(https://i.gifer.com/76YS.gif);
+	html {
+  box-sizing: border-box;
 }
-</style>
-
-<style>
-/* this is the color of any text that you input */ 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto:wght@700&display=swap');
-.profile .blurbs .section h4{
-font-family: 'Josefin Sans', sans-serif;
-text-transform:lowercase !important;
-color: white;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
-</style>
 
-<style> 
-/* these are the colors for headers */
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto:wght@700&display=swap');
-p{
-font-family: 'Josefin Sans', sans-serif;
-text-transform:lowercase !important;
-color:#ffedf9;
+body {
+  font-family: verdana, arial, sans-serif, helvetica;
+  background-color: #e5e5e5;
+  font-size: 8pt;
+  margin: 0;
 }
-</style>
 
-<style>
-/* this adjusts the size/font of your name */
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Paytone+One&display=swap');
-h1{
-font-size: 30px !important;
-font-family: 'Paytone One', sans-serif;	
-text-transform:uppercase !important;
-padding-left: 2px !important;
+a {
+  font-weight: bold;
+  text-decoration: none;
 }
-</style> 
 
-<style> 
-/* this changes the color of your name */
-.profile h1{
-background: -webkit-linear-gradient(#8870ff, #ff70de);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+a:link {
+  color: #003399;
 }
-</style>
 
-<style>
-/* this changes the color of your headers */
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Paytone+One&display=swap');
-h4{
-font-size: 16px !important;
-font-family: 'Paytone One', sans-serif;	
-text-transform:uppercase !important;
-padding-left: 2px !important;
-/* gradient text, you can replace existing colors with whatever ones you want */
-background: -webkit-linear-gradient(#ff97c1, #fff);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-
+a:visited {
+  color: #003399;
 }
-</style> 
 
-<style>
-/* this is what makes the text bold/look bigger */
-p{
-font-size: 14px !important;
-font-weight: bold;
- text-transform:none !important;
+a:hover {
+  text-decoration: underline;
+  color: #cc0000;
 }
-</style> 
 
-<style>
-/* links in the navigation bar @ the top */
-nav{ 
-font-size: 13px !important;
-font-family: 'Paytone One', sans-serif;
-text-shadow: 1px 1px black;
-text-transform:none;
-padding-left:3px;
-text-align: center;
+h2 {
+  font-size: 9pt;
+  margin: 0;
+  font-weight: bold;
 }
-</style>
 
-<style>
-/* this centers your friend space */
-    .profile .friends .inner, .profile .blurbs .section h4{
-    text-align: center;
-    }
-</style>
-
-<style>
-/* the color of the number of your friends */
-    .count {
-        color: #ff00aa;
-    }
-</style>
-
-<style>
-/* link colors when you hover over links */
-   a:hover {
-     color: white; 
-   } 
-   a{
-     color: #ff9ce0; 
-   }
-</style>
-
-<style>
-/* cursors: top URL is the cursor that shows when you hover over links, bottom URL is the main or "resting" cursor */
-/* https://cursors-4u.net */
-a:hover {    
- cursor: url('https://cur.cursors-4u.net/games/images4/gam308.png'), auto;
+p {
+  line-height: 1.3;
 }
-* {
- cursor: url('https://cur.cursors-4u.net/symbols/sym-2/sym189.png'), auto;
+
+/*
+========================================
+Master Container
+========================================
+*/
+.master-container {
+  margin: auto;
+  width: 800px;
+  background-color: white;
 }
-</style>
 
+/*
+========================================
+Main Header
+========================================
+*/
+.main-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 151px;
+  background-color: rgb(0, 51, 153);
+  color: #ffffff;
+}
 
-<style>
-/* main profile background/the box that has all your text */
-/* use https://rgbacolorpicker.com/ to pick a different color and adjust it's opacity */
+.main-header ul {
+  list-style-type: none;
+}
+
+.main-header a:link {
+  color: #ffffff;
+  font-weight: normal;
+}
+
+.main-header a:visited {
+  color: #ffffff;
+}
+
+/*
+========================================
+Search Bar
+========================================
+*/
+.search-bar {
+  display: grid;
+  grid-template-columns: 0.25fr 1fr 0.25fr;
+}
+
+.search-bar form {
+  justify-self: center;
+  margin: 0;
+}
+
+.search-bar form [type="text"] {
+  width: 160px;
+}
+
+.search-bar form [type="radio"] {
+  margin-right: 0.33rem;
+}
+
+.search-bar ul {
+  display: flex;
+}
+
+.submit-btn {
+  margin: 8px;
+  border: 1px solid black;
+  padding: 2px 7px;
+  background-color: #e0ffff;
+  font-size: 10px;
+  border-color: rgb(186, 186, 186);
+}
+
+.topnav {
+  padding: 0;
+  margin: 8px;
+}
+
+.topnav li:first-child::after {
+  content: "|";
+  margin: 0.33rem;
+}
+
+.home {
+  justify-self: start;
+}
+
+.signup {
+  justify-self: end;
+}
+
+/*
+========================================
+Navigation Bar
+========================================
+*/
+.navbar {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  background-color: rgb(102, 153, 204);
+  height: 26px;
+}
+
+.navbar ul {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.navbar li::after {
+  content: "|";
+  margin: 0.33rem;
+  color: black;
+}
+
+.navbar li:last-child::after {
+  content: "";
+}
+
+.navbar a:hover {
+  color: #003399;
+}
+
+/*
+========================================
+Page Content Container
+========================================
+*/
+.page-content-container {
+  display: grid;
+  grid-template-columns: 325px 453px;
+  grid-column-gap: 20px;
+  grid-template-areas: "sidebar main";
+}
+
+/*
+========================================
+Profile Sidebar Column
+========================================
+*/
+.profile-sidebar {
+  grid-area: sidebar;
+  margin-left: 27px;
+  width: 300px;
+}
+
+h1 {
+  font-size: 12.25pt;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.profile-sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*
+========================================
+Profile Picture Container
+========================================
+*/
+.profile-picture-container {
+  display: grid;
+  grid-template-columns: 170px 115px;
+  grid-template-rows: 176px;
+  grid-column-gap: 15px;
+  margin-bottom: 12px;
+}
+
+.profile-picture-container p {
+  margin: 0;
+}
+
+.profile-pic {
+  grid-area: 1/1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.personal-msg {
+  grid-area: 1/2;
+  margin: 0;
+}
+
+.gender-age {
+  grid-area: 1/2;
+}
+
+.gender-age li:first-child {
+  margin-top: 28px;
+}
+
+.last-login {
+  grid-area: 1/2;
+  align-self: end;
+}
+
+.last-login li:last-child {
+  margin-bottom: 15px;
+}
+
+.pics-videos {
+  grid-area: 1/1;
+  justify-self: center;
+  align-self: end;
+}
+
+/*
+========================================
+Contact Box
+========================================
+*/
+.contact-box {
+  border: 2px solid rgb(102, 153, 204);
+  height: 149px;
+  width: 300px;
+  margin-bottom: 24px;
+}
+
+.contact-box h2 {
+  color: white;
+  background-color: rgb(102, 153, 204);
+  height: 17px;
+  padding-left: 10px;
+}
+
+.contact-images {
+  display: grid;
+  grid-template-columns: 150px 150px;
+  margin: 0;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+/*
+========================================
+MySpace URL
+========================================
+*/
+.myspace-url-box {
+  border: 1px solid rgb(102, 153, 204);
+  height: 26px;
+  margin-bottom: 24px;
+}
+
+.myspace-url-box h3,
+.myspace-url-box p {
+  margin: 0;
+  padding: 0;
+}
+
+.myspace-url-box h3 {
+  font-size: 8pt;
+  padding-left: 2px;
+}
+
+.myspace-url-box p {
+  padding-left: 6px;
+}
+
+/*
+========================================
+Sidebar Table Class
+========================================
+*/
+.sidebar-table {
+  border: 2px solid rgb(102, 153, 204);
+  display: table;
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+
+.sidebar-table-h2 {
+  background-color: rgb(102, 153, 204);
+  color: white;
+  text-align: left;
+  height: 17px;
+  padding-left: 15px;
+  padding-top: 2px;
+}
+
+.sidebar-table-header {
+  vertical-align: top;
+  text-align: left;
+  width: 107px;
+  background-color: rgb(177, 208, 240);
+  color: #336699;
+  padding: 3px;
+  font-weight: bold;
+  font-size: 8pt;
+}
+
+.sidebar-table-data {
+  width: 184px;
+  background-color: rgb(213, 232, 251);
+  padding: 3px;
+}
+
+/*
+========================================
+Interests
+========================================
+*/
+.interests p {
+  margin-top: 0;
+}
+
+.interests p:only-child,
+.interests p:last-child {
+  margin-bottom: 0;
+}
+
+.interests table {
+  margin-bottom: 13px;
+}
+
+/*
+========================================
+Details
+========================================
+*/
+.details table {
+  margin-bottom: 22px;
+}
+
+/*
+========================================
+Schools
+========================================
+*/
+.schools .sidebar-table-header {
+  width: 228px;
+  color: black;
+  font-weight: normal;
+}
+
+.schools .sidebar-table-data {
+  width: 63px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.schools ul {
+  margin-bottom: 2em;
+}
+
+/*
+========================================
+Main Column
+========================================
+*/
 main {
-background: rgba(189, 124, 207, 0.4);
-border-radius:15px;
-border: 2px dotted rgba(241, 190, 255, 1)
-}
-</style>
-
-
-<style>
-/* this is the background color for the headings of your blurbs, friend space + comments */
-.profile .blurbs .heading, .profile .friends .heading {
-color: white;
-background-color:rgba(171, 118, 207, 0.4);
-text-transform:lowercase !important;
-color: white;
-border-radius:15px;
-border: 3px dotted rgba(218, 165, 255, 0.65)
-}
-</style>
-
-<style>
-/* links to your friends' profiles */
-.profile .friends .person p {
-color: #ff75d1;  
-}
-.profile .friends .person p:hover {
-color: #ffd6f1;  
-}
-</style>
-
-<style> 
-/* this is the box that says "_'s latest blog entries" */
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Roboto:wght@700&display=swap');
-DIV.blog-preview{
-text-align: center;
-font-family: 'Josefin Sans', sans-serif;
-background-color:rgba(171, 118, 207, 0.4);
-text-transform:lowercase !important;
-color: white;
-border-radius:15px;
-border: 5px dotted rgba(218, 165, 255, 0.65)
-}
-</style>
-
-<style>
-/* this edits your friends' icons */
-.profile .friends .person img:not(.icon) {
-border-radius:15px;
-box-shadow: 1px 0px 7px 2px rgba(254, 120, 180, 0.71);
-border: 3px dotted rgba(255, 221, 241, 1)
-}
-</style>
-
-
-<style>
-/* these are the colors for the table headings on the left */
-.profile .contact .heading, .profile .table-section .heading, .home-actions .heading {
-background-color: rgba(171, 118, 207, 0.4);
-}
-</style>
-
-<style>
-/* contacting "_" */
-.profile .contact {
-background-color: rgba(171, 118, 207, 0.4);
-}
-</style>
-
-<style>
-/* friend comments */
-.profile .friends .comments-table td {
-background-color: rgba(171, 118, 207, 0.4);
-border: 1px solid rgba(255, 161, 207, 0.5);  
-}
-.comments-table td*{
-    
-    
-}
-</style>
-
-
-<style>
-/* colors for interest section */
-.profile .table-section .details-table td {
-background-color:rgba(223, 162, 210, 0.58);
-}
-</style>
-
-<style>
-/* navigation bar at the top/the bar that has navigation links */
-nav .links {
-background-color: transparent;
-}
-nav .links a:hover {
-color: rgba(255, 199, 226, 1);
-}
-</style>
-
-<style>
-nav .top{
-/* navigation bar at the top/the bar that has the search and spacehey logo */
-background-color: transparent;
-}
-</style>
-
-<style>
-
-@keyframes floating {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 5px); }
-    100%   { transform: translate(0, -0px); }   
-}
-/* gif profile picture */
-.profile-pic > img { display:none; }
-.profile-pic:after { background-image: url("https://i.pinimg.com/originals/61/ee/e5/61eee57480a9223ef1c5f40e47cd2b03.gif"); display: inline-block; content:"" }
-.general-about .profile-pic:after { background-size: cover; width: 160px; height: 150px; } 
-.profile-pic:after{ 
-  border: 2px dashed  rgba(255, 161, 207, 1);  
-  box-shadow: 1px 0px 10px 2px rgba(254, 120, 180, 0.46);
- }   
-</style>
-
-
-<style>
-/* floating animations */
-.profile-pic, .profile .friends .person img:not(.icon), .profile .friends .person p, .profile h1{ 
-    animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    margin-left: 0px;
-    margin-top: 0px;
-}    
-</style>
-
-
-<style>
-/* pink dashed borders */
-.profile .url-info {
-border: 2px dashed  rgba(255, 161, 207, 1);    
-}
-.profile .contact {
-border: 2px dashed  rgba(255, 161, 207, 1);     
-}
-.profile .table-section {
-border: 2px dashed  rgba(255, 161, 207, 1);     
+  grid-area: main;
 }
 
-</style>
+/*
+========================================
+User Network
+========================================
+*/
+.user-network {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 433px;
+  margin: auto;
+  height: 75px;
+  border: 2px solid black;
+  margin-top: 13px;
+}
 
-<style>
-/* border inside of comments */
-table.comments-table {
-border: 2px dashed rgba(255, 161, 207, 1);      
-}    
-</style>
+.user-network h2 {
+  font-size: 12pt;
+}
 
-<style>
+/*
+========================================
+Blog
+========================================
+*/
+.blog {
+  display: grid;
+  grid-auto-rows: 29px;
+  flex-direction: column;
+  margin-top: 13px;
+  margin-left: 12px;
+  margin-bottom: 16px;
+}
 
-/* spacehey logo */
-nav img.logo{filter: brightness(0) saturate(100%) invert(99%) sepia(73%) saturate(7472%) hue-rotate(280deg) brightness(101%) contrast(100%); !important;}
+.blog p {
+  margin-top: 3px;
+}
 
-</style>
+/*
+========================================
+Blurbs
+========================================
+*/
+.main-section-header {
+  background-color: #ffcc99;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-bottom: 8px;
+}
 
-<style>
-/* contact icons */
-.contact .inner a img {
-font-size: 0;
+.main-section-h2 {
+  color: #ff6600;
+  margin-left: 20px;
 }
-.contact .inner a img:before {
-font-size: 1em;
-display: block
-}
-.contact .inner .f-row:nth-child(1) .f-col:nth-child(1) a:before {
-/* add to friends */
-content: "⭐"
-}
-.contact .inner .f-row:nth-child(1) .f-col:nth-child(2) a:before {
-/* add to favorite */
-content: "🌟"
-}
-.contact .inner .f-row:nth-child(2) .f-col:nth-child(1) a:before {
-/* send a message */
-content: "🌠"
-}
-.contact .inner .f-row:nth-child(2) .f-col:nth-child(2) a:before {
-/* foward to friend*/
-content: "💫"
-}
-.contact .inner .f-row:nth-child(3) .f-col:nth-child(1) a:before {
-/* instant message */
-content: "✨"
-}
-.contact .inner .f-row:nth-child(3) .f-col:nth-child(2) a:before {
-/* block user */
-content: "👾"
-}
-.contact .inner .f-row:nth-child(4) .f-col:nth-child(1) a:before {
-/* add 2 group  */
-content: "🌙"
-}
-.contact .inner .f-row:nth-child(4) .f-col:nth-child(2) a:before {
-/* report */
-content: "🛰️"
-}   
-</style>
 
-<style>
+.blurbs h3 {
+  margin: 0;
+  color: #ff6600;
+  font-size: 9pt;
+  margin-left: 15px;
+}
+
+.blurbs p:nth-of-type(5) {
+  margin-bottom: 2em;
+}
+
+.blurbs p {
+  margin: 0 10px 15px 15px;
+}
+
+.info {
+  color: green;
+  font-weight: bold;
+}
+
+/*
+========================================
+Friend Space
+========================================
+*/
+.friends header {
+  margin-bottom: 6px;
+}
+
+.friends p:nth-of-type(1) {
+  margin-top: 0;
+  margin-left: 15px;
+}
+
+.focus-highlight {
+  color: #cc0000;
+  font-weight: normal;
+  font-size: 10pt;
+}
+
+.friend-pic-container {
+  display: grid;
+  grid-template-columns: repeat(4, 109px);
+  grid-template-rows: 160px 193px;
+}
+
+.friend-pic-container figure {
+  margin: 0;
+}
+
+.friend-pic-container figcaption {
+  text-align: center;
+}
+
+.friend-pic-container img {
+  display: block;
+  margin: auto;
+}
+
+.friends-list-link {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.friends-list-link {
+  margin-top: 7px;
+  margin-right: 8px;
+  margin-bottom: 30px;
+}
+
+.friends-list-link a {
+  color: #cc0000;
+}
+
+/*
+========================================
+Comment Wall
+========================================
+*/
+.comment-wall .main-section-header {
+  margin-bottom: 3px;
+}
+
+.comment-wall .main-section-h2 {
+  margin-bottom: 0;
+}
+
+#comment-counter {
+  margin-top: 0;
+  margin-left: 15px;
+  margin-bottom: 3px;
+}
+
+.comment-wall table {
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.comment-wall th {
+  background-color: rgb(255, 153, 51);
+  width: 158px;
+  padding: 3px;
+  vertical-align: top;
+}
+
+.comment-wall td {
+  vertical-align: top;
+  background-color: rgb(249, 214, 180);
+  width: 269px;
+  padding: 3px;
+}
+
+.comment-wall figcaption,
+.comment-wall figure {
+  margin: 0;
+}
+
+.comment-wall figcaption {
+  margin-bottom: 1em;
+}
+
+.comment-wall figure {
+  margin-bottom: 49.33px;
+}
+
+.comment-wall h3 {
+  font-size: 10pt;
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+.comment-wall p {
+  font-weight: normal;
+  text-align: left;
+  margin: 0;
+}
+
+#add-comment {
+  text-align: right;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+/*
+========================================
+Footer
+========================================
+*/
 footer {
-color: white !important;
-text-decoration: underline !important;
-text-decoration-style: dotted !important;
-background-color: rgba(0, 0, 0, 0.82);
-  }    
+  display: grid;
+  grid-template-rows: 16px 39px;
+  background-color: #e5e5e5;
+  padding-top: 10px;
+  height: 65px;
+}
+
+footer a {
+  text-decoration: underline;
+  font-weight: normal;
+  font-size: 8pt;
+}
+
+footer ul {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer li:after {
+  content: " | ";
+  font-weight: normal;
+}
+
+#last:after {
+  content: none;
+}
+
+footer small {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  font-size: 8pt;
+  font-weight: normal;
+}
+
+/* Custom */
+
+body {
+  background: #0e0e0e;
+  /*background-image: linear-gradient(
+    180deg,
+    transparent 50%,
+    rgba(255, 113, 167, 0.5) 50%
+  );*/
+  background-image: url("http://4.bp.blogspot.com/-LUG4PNEUpTU/UFSmgngMEwI/AAAAAAAAKBw/tlXpnGDAv_M/s1600/3D+Stars+Wallpapers+7.jpg");
+  background-size: 50%;
+  background-attachment: fixed;
+  font-family: sans-serif, helvetica;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+.master-container {
+  background-color: transparent;
+}
+
+section,
+.profile-picture-container {
+  background-color: #ffaeb1;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.profile-sidebar header {
+  background-color: #ffaeb1;
+  padding: 1rem 1rem 0;
+}
+
+.profile-sidebar header h1 {
+  margin: 0;
+}
+
+.main-header {
+  background-color: transparent;
+  height: auto;
+}
+
+.main-header a {
+  color: #ffaeb1 !important;
+}
+
+.navbar {
+  background-color: transparent;
+  margin-top: 2rem;
+}
+
+.navbar li::after {
+  color: #fff;
+}
+
+.footer {
+  background-color: transparent;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.footer a,
+.footer small {
+  color: #ffaeb1 !important;
+}
+
+footer li:after {
+  color: #fff;
+}
+
+.page-content-container {
+  margin-top: 2rem;
+}
+
+.user-network {
+  margin: 0;
+  width: auto;
+}
+
+.blog {
+  margin-left: 0;
+}
+
+.contact-box,
+.myspace-url-box {
+  border: 0;
+  height: auto;
+  width: auto;
+}
+
+.contact-box h2,
+.sidebar-table-h2 {
+  background-color: transparent;
+  color: black;
+  padding: 0;
+  display: none;
+}
+
+.pics-videos a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.sidebar-table {
+  border: 0;
+}
+
+.sidebar-table-header,
+.sidebar-table-data {
+  color: black;
+  background-color: transparent;
+}
+
+.main-section-header {
+  background-color: transparent;
+}
+
+.main-section-h2 {
+  display: none;
+}
+
+.blurbs h3 {
+  margin: 0;
+  color: black;
+}
+
+.blurbs p {
+  margin: 10px 0;
+}
+
+.comment-wall th,
+.comment-wall td {
+  background-color: transparent;
+}
+
+.comment-wall table {
+  margin-top: 1rem;
+}
+
+section a {
+  color: #fff !important;
+  text-decoration: underline;
+}
+
+.profile-pic {
+  margin: 0;
+  filter: grayscale(100%);
+}
+
+.profile-pic:hover {
+  filter: grayscale(0%);
+  cursor: pointer;
+}
+
+.schools {
+  display: none;
+}
+
+.profile-sidebar {
+  width: 100%;
+  margin-left: 0;
+}
+
+.details table {
+  margin-bottom: 0px;
+}
+
+.user-network {
+  margin-bottom: 1rem;
+  border: 0;
+}
+
+.friend-pic-container img,
+.comment-wall img {
+  filter: grayscale(100%);
+}
+
+.friend-pic-container img:hover {
+  filter: grayscale(0%);
+}
+
+.contact-box {
+  background: url("http://4.bp.blogspot.com/-LUG4PNEUpTU/UFSmgngMEwI/AAAAAAAAKBw/tlXpnGDAv_M/s1600/3D+Stars+Wallpapers+7.jpg")
+    top black;
+  border: 5px solid #ffaeb1;
+}
+
+.contact-images p {
+  color: #ffaeb1;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.contact-images p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 </style>
 
 
-<title>
-Zane's Spam
-</title>
-
-	
-
-
-	
-
-
-<img src="cool.png" alt="newlogo" style="width:1430px;height:855px;">
-	
-
-<body>
-
-
-<center>
-<div style="font-size:15px;background-color:beige;border:1px black;color:black;width:85%;height:22%;padding:2%;">
-
-<h1> &nbsp &nbsp  Songs &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp 
-
-
-
-November - 2024
-&nbsp &nbsp
- &nbsp &nbsp &nbsp &nbsp 
- &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Artists</h1>
-   
- 
-	
-                        
-    <style>
-        p{text-align: left;}
-	
-    </style>
-</head>
-<body>
-
-    <style>
-        ol{text-align: left;}
-    </style>
-
-    <style>
-        h1{text-align: left;}
-    </style>
-    <p>
-
-
-<ol>
-<li> dragon ball z budokai tenkaichi 4 - Camping In Alaska
-&nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
- 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
- &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Camping In Alaska	</li>
-<li>	c u in da ballpit - Camping In Alaska
-&nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
- &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
- &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp Portishead </li>
-<li>	Plane Vs. Tank Vs. Submarine - Tigers Jaw
-&nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
- &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
- &nbsp &nbsp &nbsp &nbsp 
- &nbsp &nbsp  Massive Attack</li>
-<li>	Not - Big Thief &nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
- &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp 
- &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp   &nbsp &nbsp  &nbsp smokedope2016
-<li>	Xtal - Aphex Twin
- &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
- &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp
- &nbsp &nbsp  &nbsp   &nbsp   The Cure
-</li>
-</ol>
-
-</p>
 
 
 
 
-</center>
-	
-	
-</body>
-
-<center>
-	
-	
-	<body>
-		.
-		<body>
-			
-			
-<center> style="font-size:10px;background-color:beige;border:1px black;color:black;width:50%;height:1%;padding:2%;">
-	<center><h1><center> <a href='swag.html'> swag </a> </center> </h1></center></center>
-
-			<body> 
-				.
-	</body>
-	
-	
-	
-	
-
-	
-
-<!--------- CD Player Code Start --------->
-<iframe width="0" height="0" src="https://www.youtube.com/watch?v=HkyJJQu2Kqk" title="music" frameborder="0" allow="autoplay;" loading="lazy"></iframe>
-<style>
-:root {
---artist:"Chevelle";
---title:"Comfortable Liar";
---albumcover: url(https://upload.wikimedia.org/wikipedia/en/5/5a/ChevelleWonderWhatsNext.jpg);
-}
-
-
-.status-bar,.title-bar,.title-bar-controls{display:flex}.window,p#butt{background:silver;margin:auto}p#text,p#text2{box-shadow:inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;box-sizing:border-box;margin-block:3px}p#butt,p#text,p#text2{box-sizing:border-box}p#label,p#text,p#text2{margin-block:3px}.status-bar,.title-bar-text,.toptoptop,p#butt,p#label,p#text2{user-select:none}@font-face{font-family:"Pixelated MS Sans Serif";font-style:normal;font-weight:400;src:url(https://unpkg.com/98.css@0.1.20/dist/ms_sans_serif.woff) format("woff");src:url(https://unpkg.com/98.css@0.1.20/dist/ms_sans_serif.woff2) format("woff2")}@font-face{font-family:"Pixelated MS Sans Serif";font-style:normal;font-weight:700;src:url(https://unpkg.com/98.css@0.1.20/dist/ms_sans_serif_bold.woff) format("woff");src:url(https://unpkg.com/98.css@0.1.20/dist/ms_sans_serif_bold.woff2) format("woff2")}.window{text-shadow:none;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px grey,inset 2px 2px #fff;padding:3px}.window img{filter:none!important}.window *{-webkit-font-smoothing:none;font-family:"Pixelated MS Sans Serif",Arial;font-size:11px;text-shadow:inherit}.title-bar{align-items:center;background:linear-gradient(90deg,navy,#1084d0);justify-content:space-between}.title-bar-text{color:#fff;font-weight:700;letter-spacing:0;margin-right:24px;line-height:15px}.title-bar-controls p#butt{display:block;min-height:14px;min-width:16px;padding:0}.title-bar-controls p#butt:active{padding:0}.title-bar-controls p#butt:focus{outline:0}.title-bar-controls p#butt.minimize{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='6' height='2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M0 0h6v2H0z'/%3E%3C/svg%3E");background-position:bottom 3px left 4px;background-repeat:no-repeat}.title-bar-controls p#butt.maximize{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 0H0v9h9V0zM8 2H1v6h7V2z' fill='%23000'/%3E%3C/svg%3E");background-position:top 2px left 3px;background-repeat:no-repeat}.title-bar-controls p#butt.close{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H5v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1V5h1V4h1V3H2V2H1V1H0V0z' fill='%23000'/%3E%3C/svg%3E");background-position:top 3px left 4px;background-repeat:no-repeat;margin-left:2px}.status-bar{gap:1px;margin:0 1px}p#butt{white-space:nowrap;}.buttontos,p#butt,p#label,p#text,p#text2{display:inline-block}.status-bar-field{box-shadow:inset -1px -1px #dfdfdf,inset 1px 1px grey;flex-grow:1;margin:0;padding:2px 3px}.window-body{margin:8px}p#butt{border:none;border-radius:0;min-height:23px;min-width:75px;padding:6px 12px 0;text-shadow:0 0 #222;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #fff,inset -2px -2px grey,inset 2px 2px #dfdfdf;color:#000}p#butt:active{box-shadow:inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px grey;text-shadow:1px 1px #222}p#butt:focus{outline:#000 dotted 1px;outline-offset:-4px}p#butt::-moz-focus-inner{border:0}.toptoptop{text-align:left;margin-top:-3px!important;margin-bottom:5px!important;margin-inline:0px!important;}.toptoptop span{border:1px solid silver;padding:2px 4px}.toptoptop span:hover{border-top:1px solid #fff;border-left:1px solid #fff;border-bottom:1px solid gray;border-right:1px solid gray}.toptoptop span:focus{border:1px inset #fff}.window{color:#000!important;font-family:"Pixelated MS Sans Serif"!important}p#text:active{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h16v17H0V0zm1 16h14V1H1v15z' fill='gray'/%3E%3Cpath fill='silver' d='M1 1h14v15H1z'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 7H5v1h1v1h1v1h1v1h1v-1h1V9h1V8h1V7z' fill='%23000'/%3E%3C/svg%3E")}p#text{background-color:#fff;padding:4px;width:85%;text-align:left;font-size:12px;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15 0H0v16h1V1h14V0z' fill='%23DFDFDF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2 1H1v14h1V2h12V1H2z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16 17H0v-1h15V0h1v17z' fill='%23000'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15 1h-1v14H1v1h14V1z' fill='gray'/%3E%3Cpath fill='silver' d='M2 2h12v13H2z'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11 6H4v1h1v1h1v1h1v1h1V9h1V8h1V7h1V6z' fill='%23000'/%3E%3C/svg%3E");background-position:top 2px right 2px;background-repeat:no-repeat}p#text.artist:after{content:var(--artist)}p#text.title:after{content:var(--title)}p#text2:before{content:"";display:block;position:absolute;top:1px;left:1px;background:var(--albumcover);width:98%;height:96%;opacity:.5;background-size:cover;background-position:center;z-index:-1}p#text2{position:relative;padding:13px 4px;width:54%;font-size:20px;text-align:center;color:olive;background:#000;z-index:999}#butt,p#label{font-size:12px}p#label{width:fit-content;margin-right:5px}.ahhh{text-align:right}.title-bar{padding:2px}.title-bar-text img{vertical-align:bottom;margin-inline:2px}.buttontos{width:45%;height:54px;vertical-align:top;text-align:center}#butt{color:#000;text-shadow:1px 1px #fff;line-height:10px}#butt:not(:first-child){text-indent:-5px;font-weight:700}#butt:nth-child(3) span{display:block;transform:translate(2px,-2px) scale(1.2)}#butt:not(:first-child,:nth-child(2),:nth-child(3)){text-indent:-8px;font-weight:700;letter-spacing:-4px;font-size:10px}#butt:nth-child(8){text-indent:-8px;font-weight:700;letter-spacing:-1.5px;white-space:nowrap;text-shadow:none;transform:translateY(1px)}#butt:nth-child(8) span{display:block;transform:rotate(-90deg) translate(2px,0) scaleY(1.4);color:#000}.title,.artist{height:23px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding-right:20px!important;vertical-align: bottom;}</style><div class="window" style="width:320px"><div class="title-bar"><div class="title-bar-text"><img src="https://images2.imgbox.com/42/89/JIRoQjUo_o.png"/>CD Player</div><div class="title-bar-controls"><p id="butt" class="minimize"></p><p id="butt" class="maximize"></p><p id="butt" class="close"></p></div></div><div class="window-body"><p class="toptoptop"><span><u>D</u>isc</span> <span><u>V</u>iew</span> <span><u>O</u>ptions</span> <span><u>H</u>elp</span></p><p id="text2">[00] 00:00</p><div class="buttontos"><p id="butt">▶ </p><p id="butt" style="min-width:20px;max-width:20px;margin-inline:0px">❚❚ </p><p id="butt" style="min-width:20px;max-width:20px"><span>◼</span> </p><p id="butt" style="min-width:20px;max-width:20px;margin-top:5px">❚◄◄ </p><p id="butt" style="min-width:20px;max-width:20px;margin-top:5px;margin-left:0px">◄◄ </p><p id="butt" style="min-width:20px;max-width:20px;margin-top:5px;margin-left:0px">►► </p><p id="butt" style="min-width:20px;max-width:20px;margin-top:5px;margin-left:0px">►►❚ </p><p id="butt" style="min-width:20px;max-width:20px;margin-top:5px;margin-left:0px"><span>❚ ►</span></p></div><div class="ahhh"><p id="label"><u>A</u>rtist:</p><p id="text" class="artist"></p><p id="label">Title:</p><p id="text" class="title"></p></div></div><div class="status-bar"><p class="status-bar-field">Total Play: 00:00 m:s</p><p class="status-bar-field">Track: 00:00 m:s</p></div></div>
-<!--------- CD Player Code End --------->
-	
-	
-		<body> 
-			nbsp	
-	</body>
-	
-		
-	
-	
-	<html>
-  <head>
-    <title>Slideshow Images</title>
-    <style>
-      .slider {
-        width: 500px;
-        height: 500px;
-        background-color: yellow;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 0px;
-        text-align: center;
-        overflow: hidden;
-      }
-      .image-container {
-        width: 1500px;
-        background-color: pink;
-        height: 500px;
-        clear: both;
-        position: relative;
-        -webkit-transition: left 2s;
-        -moz-transition: left 2s;
-        -o-transition: left 2s;
-        transition: left 2s;
-      }
-      .slide {
-        float: left;
-        margin: 0px;
-        padding: 0px;
-        position: relative;
-      }
-      #slide-28:target ~ .image-container {
-        left: 0px;
-      }
-      #slide-29:target ~ .image-container {
-        left: -500px;
-      }
-      #slide-30:target ~ .image-container {
-        left: -1000px;
-      }
-      .buttons {
-        position: relative;
-        top: -35px;
-      }
-      .buttons a {
-        display: inline-block;
-        height: 35px;
-        width: 35px;
-        border-radius: 50px;
-        background-color: grey;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="slider">
-      <span id="slide-28"></span>
-      <span id="slide-29"></span>
-      <span id="slide-30"></span>
-      <div class="image-container">
-        <img src="afield2.jpeg" class="slide" width="500" height="500" />
-        <img src="afield1.jpeg" class="slide" width="500" height="500" />
-        <img src="afield4.jpeg" class="slide" width="500" height="500" />
-      </div>
-      <div class="buttons">
-        <a href="#slide-28"></a>
-        <a href="#slide-29"></a>
-        <a href="#slide-30"></a>
-      </div>
-    </div>
-  </body>
-</html>
-
-<center><div style="background-color:transparent;padding:2%;">
-<img src="justphotoss.png" alt="logo" style="width:200px;height:125px;">
-
-	</center>
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<html>
-  <head>
-    <title>Slideshow Images</title>
-    <style>
-      .slider {
-        width: 500px;
-        height: 500px;
-        background-color: yellow;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 0px;
-        text-align: center;
-        overflow: hidden;
-      }
-      .image-container {
-        width: 1500px;
-        background-color: pink;
-        height: 500px;
-        clear: both;
-        position: relative;
-        -webkit-transition: left 2s;
-        -moz-transition: left 2s;
-        -o-transition: left 2s;
-        transition: left 2s;
-      }
-      .slide {
-        float: left;
-        margin: 0px;
-        padding: 0px;
-        position: relative;
-      }
-      #slide-25:target ~ .image-container {
-        left: 0px;
-      }
-      #slide-26:target ~ .image-container {
-        left: -500px;
-      }
-      #slide-27:target ~ .image-container {
-        left: -1000px;
-      }
-      .buttons {
-        position: relative;
-        top: -35px;
-      }
-      .buttons a {
-        display: inline-block;
-        height: 35px;
-        width: 35px;
-        border-radius: 50px;
-        background-color: grey;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="slider">
-      <span id="slide-25"></span>
-      <span id="slide-26"></span>
-      <span id="slide-27"></span>
-      <div class="image-container">
-        <img src="ny1.jpeg" class="slide" width="500" height="500" />
-        <img src="ny2.jpeg" class="slide" width="500" height="500" />
-        <img src="ny4.jpeg" class="slide" width="500" height="500" />
-      </div>
-      <div class="buttons">
-        <a href="#slide-25"></a>
-        <a href="#slide-26"></a>
-        <a href="#slide-27"></a>
-      </div>
-    </div>
-  </body>
-</html>
-
-<center><div style="background-color:transparent;padding:2%;">
-<img src="nyc2.png" alt="logo" style="width:200px;height:125px;">
-
-	</center>
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		
-	
-	<html>
-  <head>
-    <title>Slideshow Images</title>
-    <style>
-      .slider {
-        width: 500px;
-        height: 500px;
-        background-color: yellow;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 0px;
-        text-align: center;
-        overflow: hidden;
-      }
-      .image-container {
-        width: 1500px;
-        background-color: pink;
-        height: 500px;
-        clear: both;
-        position: relative;
-        -webkit-transition: left 2s;
-        -moz-transition: left 2s;
-        -o-transition: left 2s;
-        transition: left 2s;
-      }
-      .slide {
-        float: left;
-        margin: 0px;
-        padding: 0px;
-        position: relative;
-      }
-      #slide-22:target ~ .image-container {
-        left: 0px;
-      }
-      #slide-23:target ~ .image-container {
-        left: -500px;
-      }
-      #slide-24:target ~ .image-container {
-        left: -1000px;
-      }
-      .buttons {
-        position: relative;
-        top: -35px;
-      }
-      .buttons a {
-        display: inline-block;
-        height: 35px;
-        width: 35px;
-        border-radius: 50px;
-        background-color: grey;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="slider">
-      <span id="slide-22"></span>
-      <span id="slide-23"></span>
-      <span id="slide-24"></span>
-      <div class="image-container">
-        <img src="post1.jpeg" class="slide" width="500" height="500" />
-        <img src="post2.jpeg" class="slide" width="500" height="500" />
-        <img src="post3.jpeg" class="slide" width="500" height="500" />
-      </div>
-      <div class="buttons">
-        <a href="#slide-22"></a>
-        <a href="#slide-23"></a>
-        <a href="#slide-24"></a>
-      </div>
-    </div>
-  </body>
-</html>
-
-<center><div style="background-color:transparent;padding:2%;">
-<img src="justphotoss.png" alt="logo" style="width:200px;height:125px;">
-
-	</center>
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		
-		
-	
-	<html>
-  <head>
-    <title>Slideshow Images</title>
-    <style>
-      .slider {
-        width: 500px;
-        height: 500px;
-        background-color: yellow;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 0px;
-        text-align: center;
-        overflow: hidden;
-      }
-      .image-container {
-        width: 1500px;
-        background-color: pink;
-        height: 500px;
-        clear: both;
-        position: relative;
-        -webkit-transition: left 2s;
-        -moz-transition: left 2s;
-        -o-transition: left 2s;
-        transition: left 2s;
-      }
-      .slide {
-        float: left;
-        margin: 0px;
-        padding: 0px;
-        position: relative;
-      }
-      #slide-19:target ~ .image-container {
-        left: 0px;
-      }
-      #slide-20:target ~ .image-container {
-        left: -500px;
-      }
-      #slide-21:target ~ .image-container {
-        left: -1000px;
-      }
-      .buttons {
-        position: relative;
-        top: -35px;
-      }
-      .buttons a {
-        display: inline-block;
-        height: 35px;
-        width: 35px;
-        border-radius: 50px;
-        background-color: grey;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="slider">
-      <span id="slide-19"></span>
-      <span id="slide-20"></span>
-      <span id="slide-21"></span>
-      <div class="image-container">
-        <img src="skate2.jpeg" class="slide" width="500" height="500" />
-        <img src="100_1689.jpeg" class="slide" width="500" height="500" />
-        <img src="shirtpull2.jpeg" class="slide" width="500" height="500" />
-      </div>
-      <div class="buttons">
-        <a href="#slide-19"></a>
-        <a href="#slide-20"></a>
-        <a href="#slide-21"></a>
-      </div>
-    </div>
-  </body>
-</html>
-
-<center><div style="background-color:transparent;padding:2%;">
-<img src="justphotoss.png" alt="logo" style="width:200px;height:125px;">
-
-	</center>
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-	
-	
-	<body>
-		.
-	</body>
-	
-	
-
-	
-
-
-	</center>
 
 
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<html>
-  <head>
-    <title>Slideshow Images</title>
-    <style>
-      .slider {
-        width: 500px;
-        height: 500px;
-        background-color: yellow;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 0px;
-        text-align: center;
-        overflow: hidden;
-      }
-      .image-container {
-        width: 1500px;
-        background-color: pink;
-        height: 500px;
-        clear: both;
-        position: relative;
-        -webkit-transition: left 2s;
-        -moz-transition: left 2s;
-        -o-transition: left 2s;
-        transition: left 2s;
-      }
-      .slide {
-        float: left;
-        margin: 0px;
-        padding: 0px;
-        position: relative;
-      }
-      #slide-13:target ~ .image-container {
-        left: 0px;
-      }
-      #slide-14:target ~ .image-container {
-        left: -500px;
-      }
-      #slide-15:target ~ .image-container {
-        left: -1000px;
-      }
-      .buttons {
-        position: relative;
-        top: -35px;
-      }
-      .buttons a {
-        display: inline-block;
-        height: 35px;
-        width: 35px;
-        border-radius: 50px;
-        background-color: grey;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="slider">
-      <span id="slide-13"></span>
-      <span id="slide-14"></span>
-      <span id="slide-15"></span>
-      <div class="image-container">
-        <img src="100_1577.jpeg" class="slide" width="500" height="500" />
-        <img src="100_1583.jpeg" class="slide" width="500" height="500" />
-        <img src="100_1591.jpeg" class="slide" width="500" height="500" />
-      </div>
-      <div class="buttons">
-        <a href="#slide-13"></a>
-        <a href="#slide-14"></a>
-        <a href="#slide-15"></a>
-      </div>
-    </div>
-  </body>
-</html>
-
-<center><div style="background-color:transparent;padding:2%;">
-<img src="aquariumm.png" alt="logo" style="width:200px;height:125px;">
-
-	</center>
 
 
-	
-	
-	<body>
-		.
-	</body>
-	
-	
 <html>
-  <head>
-    <title>Slideshow Images</title>
-    <style>
-      .slider {
-        width: 500px;
-        height: 500px;
-        background-color: yellow;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 0px;
-        text-align: center;
-        overflow: hidden;
-      }
-      .image-container {
-        width: 1500px;
-        background-color: pink;
-        height: 500px;
-        clear: both;
-        position: relative;
-        -webkit-transition: left 2s;
-        -moz-transition: left 2s;
-        -o-transition: left 2s;
-        transition: left 2s;
-      }
-      .slide {
-        float: left;
-        margin: 0px;
-        padding: 0px;
-        position: relative;
-      }
-      #slide-10:target ~ .image-container {
-        left: 0px;
-      }
-      #slide-11:target ~ .image-container {
-        left: -500px;
-      }
-      #slide-12:target ~ .image-container {
-        left: -1000px;
-      }
-      .buttons {
-        position: relative;
-        top: -35px;
-      }
-      .buttons a {
-        display: inline-block;
-        height: 35px;
-        width: 35px;
-        border-radius: 50px;
-        background-color: grey;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="slider">
-      <span id="slide-10"></span>
-      <span id="slide-11"></span>
-      <span id="slide-12"></span>
-      <div class="image-container">
-        <img src="art1.jpeg" class="slide" width="500" height="500" />
-        <img src="art2.jpeg" class="slide" width="500" height="500" />
-        <img src="art3.jpeg" class="slide" width="500" height="500" />
+
+
+	<div class="master-container">
+
+  <!-- Main Header Begins -->
+  <header class="main-header">
+    <nav class="search-bar">
+
+      <ul class="topnav home">
+        <li><a href="#">MySpace.com</a></li>
+        <li><a href="#">Home</a></li>
+      </ul>
+
+      <form>
+        <label>
+          The Web
+          <input type="radio" name="search-type" value="the-web">
+        </label>
+
+        <label>
+          MySpace
+          <input type="radio" name="search-type" value="myspace">
+        </label>
+
+        <label>
+          <input type="text" name="search">
+        </label>
+
+        <input class="submit-btn" type="submit" name="submit-button" value="Search">
+      </form>
+
+      <ul class="topnav signup">
+        <li><a href="#">Help</a></li>
+        <li><a href="#">SignUp</a></li>
+      </ul>
+    </nav>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Browse</a></li>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Invite</a></li>
+        <li><a href="#">Film</a></li>
+        <li><a href="#">Mail</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Favorites</a></li>
+        <li><a href="#">Forum</a></li>
+        <li><a href="#">Groups</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Videos</a></li>
+        <li><a href="#">Music</a></li>
+        <li><a href="#">Classifieds</a></li>
+      </ul>
+    </nav>
+
+  </header>
+  <!-- Main Header Ends -->
+
+  <div class="page-content-container">
+
+    <!-- Profile Sidebar Begins -->
+    <aside class="profile-sidebar">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1qSwwqxkonbuEthY1jug0L6lNQmlLi1XOhQ&s" alt="newlogo" style="width:300px;height:255px;">
+  
+      <!-- Profile Picture -->
+      <div class="profile-picture-container">
+        <img class="profile-pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1qSwwqxkonbuEthY1jug0L6lNQmlLi1XOhQ&s" alt="A profile picture of Tom, the creator of MySpace.">
+
+        <p class="personal-msg"><b>"Just me &hearts; &hearts; &hearts;"</b></p>
+
+        <ul class="gender-age">
+          <li>Female</li>
+          <li>15 years old</li>
+          <li>United Kingdom</li>
+        </ul>
+
+        <ul class="last-login">
+          <li>Last Login:</li>
+          <li>4/22/2006</li>
+        </ul>
+
+        <p class="pics-videos">View My: <a href="#"><b>Pics</b></a> | <a href="#"><b>Videos</b></a></p>
       </div>
-      <div class="buttons">
-        <a href="#slide-10"></a>
-        <a href="#slide-11"></a>
-        <a href="#slide-12"></a>
-      </div>
-    </div>
-  </body>
+   <body>
+       .
+      </body>
+      <!-- Contact Box -->
+      <section class="contact-box">
+        <h2>Contacting Tom</h2>
+
+        <figure class="contact-images">
+          <p>Message me</p>
+          <p>Forward</p>
+          <p>Add Friend</p>
+          <p>Favourite</p>
+          <p>Instant Message</p>
+          <p>Block</p>
+          <p>Add to Group</p>
+          <p>Rank User</p>
+        </figure>
+      </section>
+
+      <!-- MySpace URL -->
+      <section class="myspace-url-box">
+        <h3><b>MySpace URL:</b></h3>
+        <p>http://www.myspace.com/xxlilcrysxx</p>
+      </section>
+
+      <!-- Interests Section -->
+      <section class="interests">
+        <table class="sidebar-table">
+
+          <caption>
+            <h2 class="sidebar-table-h2">Tom's Interests</h2>
+          </caption>
+
+          <tbody>
+            <tr>
+              <th class="sidebar-table-header" scope="row">General</th>
+              <td class="sidebar-table-data">
+                <p>tv, films, my friends &hearts; &hearts; &hearts; </p>
+              </td>
+            </tr>
+
+            <tr>
+              <th class="sidebar-table-header" scope="row">Music</th>
+              <td class="sidebar-table-data">
+                <p>
+                  fall out boy, P!ATD, a7x, tenacious d, paramore
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <th class="sidebar-table-header" scope="row">Movies</th>
+              <td class="sidebar-table-data">
+                <p>
+                  casino royale, hot fuzz, forrest gump, mean girls
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <th class="sidebar-table-header" scope="row">Television</th>
+              <td class="sidebar-table-data">
+                <p>family guy, mighty boosh, 24, CSI, friends, scrubs, the oc</p>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Tom's Details Section -->
+      <section class="details">
+        <table class="sidebar-table">
+
+          <caption>
+            <h2 class="sidebar-table-h2">Tom's Details</h2>
+          </caption>
+
+          <tbody>
+            <tr>
+              <th class="sidebar-table-header" scope="row">Status:</th>
+              <td class="sidebar-table-data">Single</td>
+            </tr>
+
+            <th class="sidebar-table-header" scope="row">Zodiac Sign:</th>
+            <td class="sidebar-table-data">Libra</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </section>
+    </aside>
+    <!-- Profile Side Bar Ends -->
+
+    <!-- Main Section -->
+    <main>
+
+      <section class="user-network">
+        <header>
+          <h2>xxlilcrysxx is in your extended network</h2>
+        </header>
+      </section>
+
+      <section class="blurbs">
+        <header class="main-section-header">
+          <h2 class="main-section-h2">Tom's Blurbs</h2>
+        </header>
+
+        <h3><strike>About me</strike></h3>
+        <p>
+          <em>It just takes some time little girl, you're in the middle of the ride.<br /> <br />
+            Everything, everything will be just fine
+            everything, everything will be alright, alright <br /> <br /> &hearts;</em>
+        </p>
+        <iframe width="410" height="230" src="https://www.youtube.com/embed/FV-HPOHu8mY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br />
+        <br />
+        <h3><strike>Who I'd like to meet:</strike></h3>
+        <em>everyone and Noel Fielding</em>
+      </section>
+
+      <section class="friends">
+        <header class="main-section-header">
+          <h2 class="main-section-h2">xxlilcrysxx's Friend Space</h2>
+        </header>
+
+        <p><b>xxlilcrysxx has <span class="focus-highlight">98</span> Friends.</b></p>
+
+        <div class="friend-pic-container">
+          <figure>
+            <figcaption><a href="#">Mia</a></figcaption>
+            <img src="http://placekitten.com/100/100">
+          </figure>
+
+          <figure>
+            <figcaption><a href="#">Kat</a></figcaption>
+            <img src="http://placekitten.com/90/120">
+          </figure>
+
+          <figure>
+            <figcaption><a href="#">Mat</a></figcaption>
+            <img src="http://placekitten.com/120/80">
+          </figure>
+
+          <figure>
+            <figcaption><a href="#">Tommm</a></figcaption>
+            <img src="http://placekitten.com/80/110">
+          </figure>
+
+          <figure>
+            <figcaption><a href="#">Tim</a></figcaption>
+            <img src="http://placekitten.com/100/170">
+          </figure>
+
+          <figure>
+            <figcaption><a href="#">James</a></figcaption>
+            <img src="http://placekitten.com/80/100">
+          </figure>
+
+          <figure>
+            <figcaption><a href="#">Jamiii &hearts;</a></figcaption>
+            <img src="http://placekitten.com/105/100">
+          </figure>
+
+          <figure>
+            <figcaption><a href="#">Aaron</a></figcaption>
+            <img src="http://placekitten.com/100/108">
+          </figure>
+        </div>
+
+        <p class="friends-list-link"><a href="#">View All of xxlilcrysxx's Friends</a></p>
+      </section>
+
+      <section class="comment-wall">
+        <header class="main-section-header">
+          <h2 class="main-section-h2">Tom's Friends Comments</h2>
+        </header>
+
+        <p id="comment-counter"><b>Displaying <span class="focus-highlight">5</span> of <span class="focus-highlight">220</span> comments (<a href="#">View/Edit All Comments</a>)</b></p>
+
+        <table>
+          <tr>
+            <th scope="row">
+              <figure>
+                <figcaption><a href="#">Todd</a></figcaption>
+                <img src="http://placekitten.com/100/90">
+              </figure>
+            </th>
+            <td>
+              <h3>4/22/2006 6:54 PM</h3>
+              <p>pc4pc?</p>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              <figure>
+                <figcaption><a href="#">Laura</a></figcaption>
+                <img src="http://placekitten.com/100/150">
+              </figure>
+            </th>
+            <td>
+              <h3>4/22/2006 6:51 PM</h3>
+              <p>thanx 4 the add!!!</p>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              <figure>
+                <figcaption><a href="#">ASH</a></figcaption>
+                <img src="http://placekitten.com/50/50">
+              </figure>
+            </th>
+            <td>
+              <h3>4/22/2006 5:30 PM</h3>
+              <p>hiiiii :)</p>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              <figure>
+                <figcaption><a href="#">Sammy</a></figcaption>
+                <img src="http://placekitten.com/120/120">
+              </figure>
+            </th>
+            <td>
+              <h3>4/22/2006 12:37 PM</h3>
+              <p>omg I luv that song</p>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              <figure>
+                <figcaption><a href="#">Danny</a></figcaption>
+                <img src="http://placekitten.com/90/100">
+              </figure>
+            </th>
+            <td>
+              <h3>4/22/2006 12:13 PM</h3>
+              <p>Hey add me I accept everyone</p>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              <figure>
+                <figcaption><a href="#">The Truckstop Fighters</a></figcaption>
+                <img src="http://placekitten.com/100/300">
+              </figure>
+            </th>
+            <td>
+              <h3>4/22/2006 12:08 PM</h3>
+              <p>Hey! cool music taste! check out our band! Our new song is on our page! FFO Green day, Blink 182, NOFX etc.</p>
+            </td>
+          </tr>
+
+        </table>
+
+        <p id="add-comment"><a href="#">Add Comment</a></p>
+
+      </section>
+    </main>
+
+  </div>
+  <!-- Footer -->
+  <footer class="footer">
+
+    <nav>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Safety Tips</a></li>
+        <li><a href="#">Contact Myspace</a></li>
+        <li><a href="#">Report Inappropriate Content</a></li>
+        <li><a href="#">Promote!</a></li>
+        <li><a href="#">Advertise</a></li>
+        <li id="last"><a href="#">MySpace International</a></li>
+      </ul>
+    </nav>
+
+    <small>©2003-2006 MySpace.com. All Rights Reserved.</small>
+  </footer>
+</div>
 </html>
-	
-<center><div style="background-color:transparent;padding:2%;">
-<img src="justphotoss.png" alt="logo" style="width:200px;height:125px;">
-
-	</center>
 
 
 
-
-	
-
-
-
-<!DOCTYPE html>
-<html>
- <head>
-    <title>Slideshow Images</title>
-    <style>
-      .slider {
-        width: 500px;
-        height: 500px;
-        background-color: yellow;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 0px;
-        text-align: center;
-        overflow: hidden;
-      }
-      .image-container {
-        width: 1500px;
-        background-color: pink;
-        height: 500px;
-        clear: both;
-        position: relative;
-        -webkit-transition: left 2s;
-        -moz-transition: left 2s;
-        -o-transition: left 2s;
-        transition: left 2s;
-      }
-      .slide {
-        float: left;
-        margin: 0px;
-        padding: 0px;
-        position: relative;
-      }
-      #slide-7:target ~ .image-container {
-        left: 0px;
-      }
-      #slide-8:target ~ .image-container {
-        left: -500px;
-      }
-      #slide-9:target ~ .image-container {
-        left: -1000px;
-      }
-      .buttons {
-        position: relative;
-        top: -35px;
-      }
-      .buttons a {
-        display: inline-block;
-        height: 35px;
-        width: 35px;
-        border-radius: 50px;
-        background-color: grey;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="slider">
-      <span id="slide-7"></span>
-      <span id="slide-8"></span>
-      <span id="slide-9"></span>
-      <div class="image-container">
-        <img src="face.jpg" class="slide" width="500" height="500" />
-        <img src="mountain.jpeg" class="slide" width="500" height="500" />
-        <img src="lights.jpeg" class="slide" width="500" height="500" />
-      </div>
-      <div class="buttons">
-        <a href="#slide-7"></a>
-        <a href="#slide-8"></a>
-        <a href="#slide-9"></a>
-      </div>
-    </div>
-  </body>
-</html>
-
-		<center><div style="background-color:transparent;padding:2%;">
-<img src="justphotoss.png" alt="logo" style="width:200px;height:125px;">
-
-	</center>
-<center>
-	<p>
-	.
-	
-	</p>
-
-<p>
-	.
-	
-	</p>
-
-<p>
-	.
-	
-	</p>
-
-<p>
-	.
-	
-	</body>
-	</center>
-<img src="garfieldbye.png" alt="logo" style="width:600px;height:400px;"> <img src="keef.jpeg" alt="newlogo" style="width:350px;height:250px;">
-
-
-
-
-
- 
-</html>
 
 
 
