@@ -1,1244 +1,320 @@
-<!-- (c) Layout created by chair (https://layouts.spacehey.com/layout?id=26177) -->
-<html>
-    <style>
-            @font-face {
-                font-family: "dinkie9px";
-                src: url('https://chairfiles.vercel.app/DinkieBitmap-9px.woff2') format('woff2');
-            }
-
-            @font-face {
-                font-family: "pixelmplus10";
-                src: url("spacee5.jpeg") format("woff2");
-                font-weight: normal;
-                font-style: normal;
-            }
-
-            body {
-                font-family: dinkie9px;
-                font-weight: normal;
-                text-decoration-color: #4D21CB;
-            }
-
-            .container {
-                background-image: url("spacee5");
-                background-repeat: repeat;
-                height:100%;
-            }
-            main {
-                background-image: url("spacee5");
-                background-repeat: repeat;
-            }
-
-            .comments-table td *, .bulletin-table td * {
-                max-width:60%;
-            }
-
-            .profile .contact, .profile .url-info, .profile .table-section, .home-actions
-            {
-                width: 100%;
-            }
-
-
-            @media(min-width: 30em){ /* desktop */
-                .col.w-40 {
-                    width: 55%;
-                }
-                .blog-preview p {
-                    background-image: url("https://chairfiles.vercel.app/speechbubble.png");
-                    width:75%;
-                    background-size:95%;
-                }
-            }
-
-            @media(max-width: 30em){ /* mobile */
-                .col.w-40 {
-                    width: 100%;
-                }
-                .blog-preview p {
-                    background-image: url("https://chairfiles.vercel.app/speechbubblemobile.png");
-                    width:85%;
-                    background-size:145%;
-                }
-
-            }
-
-            .profile .contact {
-                border: 2px solid #4D23CD;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD, 4px 4px #4e23cd48;
-                font-weight: 400;
-                font-family: 'pixelmplus10', sans-serif;
-                font-size: 7px;
-                color: #4D21CB;
-                background-color:#FDF8FD;
-            }
-
-            .profile .contact .inner {
-                padding-left: 4px;
-                padding-right: 4px;
-                color: #4D21CB;
-            }
-
-            .profile .contact .innertime {
-                padding: 8px;
-                color: #000;
-            }
-
-            .profile .contact .inner .f-row .f-col a {
-                color: #000;
-                font-weight: 400;
-            }
-
-
-            .url-info {
-                height: 172px;
-                width: 343px;
-                background-image: url("https://chairfiles.vercel.app/mrreow.png");
-                font-weight: 400;
-            }
-
-
-
-            main .left, main .right {
-                padding: clamp(5px, 5%, 40px);
-            }
-
-            main {
-                image-rendering: pixelated;
-            }
-
-            .container {
-                width: 1440px;
-                max-width: 100%;
-                margin: 0 auto 10px;
-            }
-
-            .profile .url-info
-            {
-                border: 0px;
-                width: 343px;
-                font-weight: 400;
-            }
-
-            .url-info p {
-                padding-top: 4px;
-                font-weight: 400;
-            }
-
-            button:not(.logout-btn) {
-                background: #f0d1f1;
-                box-shadow: inset 2px 2px #815CDA, 2px 2px #FDFDFD;
-                color: #4d23cf;
-                font-size: 15px;
-                font-weight: normal;
-                text-shadow: #f0d1f1 0px 2px 5px;
-                border: 2px solid #f0d1f1;
-                border-radius: 2px;
-                padding: 4px;
-            }
-
-            #comments button {
-                background: #FDF8FD;
-                box-shadow: none;
-                color: #4d23cf;
-                font-size: 15px;
-                font-weight: normal;
-                text-shadow: none;
-                border: none;
-                padding: 4px;
-            }
-
-            .comments-table .comment-replies {
-                border: 0px solid white;
-                max-width: 100%;
-            }
-
-            .comments-table .comment-replies .comment-reply {
-                max-width: 100%;
-                padding-left: 40px;
-                background-image: url("https://chairfiles.vercel.app/reparrow.png");
-                background-repeat: no-repeat;
-            }
-
-            :root {
-                --light-gray: #f2f0f0;
-                --gray: #e3e3e3;
-                --dark-gray: #919191;
-                --darker-gray: #545454;
-                --logo-blue: #1D4ED8;
-                --darker-blue: #1E40AF;
-                --lighter-blue: #60A5FA;
-                --even-lighter-blue: #BFDBFE;
-                --lightest-blue: #DBEAFE;
-                --red: #FF0000;
-                --dark-orange: #ED0707;
-                --light-orange: #f9c56c;
-                --even-lighter-orange: #fcdbb8;
-                --strange-yellow: #dbae2e;
-                --green: #34D399;
-                --light-green: #E6F8DD;
-                --medium-green: #A0C99C;
-                --dark-green: #059669;
-                accent-color: #1D4ED8;
-                accent-color: var(--logo-blue);
-            }
-
-            .profile .contact .heading {
-                padding: 8px;
-                padding-left: 12px;
-                background-color: #EFCFEF;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD;
-                border-bottom: 2px solid #4D23CD;
-                color: #4D21CB;
-                font-family: 'dinkie9px', sans-serif;
-                font-weight: 400;
-                background-image: url("spacee5.jpeg");
-                background-position: right center;
-                background-repeat: no-repeat;
-                padding-right: 12px;
-                font-weight: 400;
-                letter-spacing: 0.045em;
-            }
-            
-            .timeselector .contact {
-                border: 2px solid #4D23CD;
-            }
-
-            .timeselector {
-                width: 180px;
-                height: 91.85px;
-            }
-
-            .timeselector .contact .heading {
-                padding: 8px;
-                padding-left: 12px;
-                background-color: #EFCFEF;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD;
-                border-bottom: 2px solid #4D23CD;
-                color: #4D21CB;
-                font-family: 'dinkie9px', sans-serif;
-                font-weight: 400;
-                background-image: url("spacee5.jpeg");
-                background-position: right center;
-                background-repeat: no-repeat;
-                padding-right: 12px;
-                font-weight: 400;
-                letter-spacing: 0.045em;
-            }
-            
-
-            .profile .contact .heading h4 {
-                font-weight: 400;
-            }
-
-            .timeselector .contact .heading h4 {
-                font-weight: 400;
-                
-                margin-top: 0px;
-                margin-bottom: 0px;
-            }
-
-            .profile .table-section .heading h4 {
-                font-weight: 400;
-                letter-spacing: 0.045em;
-            }
-
-            .profile .table-section .inner {
-                padding-left: 6px;
-                padding-right: 6px;
-                padding-bottom: 6px;
-            }
-
-            .profile .table-section {
-                border: 2px solid #4D23CD;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD, 4px 4px #4e23cd48;
-                font-weight: 400;
-                background-color:#FDF8FD;
-            }
-
-            .details-table td {
-                background: #F7E1FA3d;
-            }
-
-            /* stack everything in innertime vertically */
-            .innertime {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .details-table td:first-child {
-                color: #4D21CB;
-                font-weight: 400;
-            }
-
-            .details-table td:first-child {
-                background: #805cdc3d;
-            }
-
-            .profile .table-section .heading {
-                padding: 8px;
-                padding-left: 12px;
-                background-color: #EFCFEF;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD;
-                border-bottom: 2px solid #4D23CD;
-                color: #4D21CB;
-                background-image: url("spacee5.jpeg");
-                background-position: right center;
-                background-repeat: no-repeat;
-                padding-right: 12px;
-                font-weight: 400;
-            }
-
-            .general-about .profile-pic .pfp-fallback {
-                box-shadow: 8px 8px #4e23cd48;
-            }
-
-            .general-about .profile-pic {
-                padding-bottom: 40px;
-                box-sizing: content-box; 
-            }
-
-            .general-about .profile-pic:before {
-                display: block;
-                background-color: #EFCFEF;
-                box-shadow: 0px 0px 0px 4px #90F3E1, 0px 0px 0px 6px #4D23CD, 10px 10px #4e23cd48;
-                border: 2px solid #4D23CD;
-                border-bottom: 0px solid #4D23CD;
-                color: #4D21CB;
-                background-image: url("https://chairfiles.vercel.app/misalignednavbuttons.png");
-                background-position: right center;
-                background-repeat: no-repeat;
-                font-weight: 400;
-                content: "Webcam";
-                font-size: 18px;
-                text-align: left;
-                letter-spacing: 0.045em;
-                padding: 4px;
-                margin-left: 6px;
-            }
-
-            .general-about .profile-pic .pfp-fallback {
-                border: 2px solid #4D23CD;
-                box-shadow: 0px 0px 0px 4px #90F3E1, 0px 0px 0px 6px #4D23CD, 10px 10px #4e23cd48;
-                font-weight: 400;
-                font-family: 'pixelmplus10', sans-serif;
-                image-rendering: optimizeQuality;
-                color: #4D21CB;
-                background-color:#FDF8FD;
-                text-align: center;
-                display: block;
-                justify-content: center;
-                margin-left: 6px;
-            }
-            
-            .mood {
-                padding-top:8px;
-            }
-
-            .contact .inner a img {
-                image-rendering: pixelated;
-                font-size: 0;
-            }
-            .contact .inner a img:before {
-                font-size: 1em;
-                display: block
-            }
-            .contact .inner .f-row:nth-child(1) .f-col:nth-child(1) a:before {
-                /* add to friends */
-                content: url("https://chairfiles.vercel.app/1heart.png");
-            }
-            .contact .inner .f-row:nth-child(1) .f-col:nth-child(2) a:before {
-                /* add to favorite */
-                content: url("https://chairfiles.vercel.app/2doubleheart.png");
-            }
-            .contact .inner .f-row:nth-child(2) .f-col:nth-child(1) a:before {
-                /* send a message */
-                content: url("https://chairfiles.vercel.app/32fingers.png");
-            }
-            .contact .inner .f-row:nth-child(2) .f-col:nth-child(2) a:before {
-                /* foward to friend*/
-                content: url("https://chairfiles.vercel.app/4sparkle.png");
-            }
-            .contact .inner .f-row:nth-child(3) .f-col:nth-child(1) a:before {
-                /* instant message */
-                content: url("https://chairfiles.vercel.app/5musicalnote.png");
-            }
-            .contact .inner .f-row:nth-child(3) .f-col:nth-child(2) a:before {
-                /* block user */
-                content: url("https://chairfiles.vercel.app/6explosion.png");
-            }
-            .contact .inner .f-row:nth-child(4) .f-col:nth-child(1) a:before {
-                /* add to group  */
-                content: url("https://chairfiles.vercel.app/7confetti.png");
-            }
-            .contact .inner .f-row:nth-child(4) .f-col:nth-child(2) a:before {
-                /* report */
-                content: url("https://chairfiles.vercel.app/8angrysign.png");
-            }
-
-            .blog-preview p .pinned .icon {
-                content: url("https://chairfiles.vercel.app/pin.png");
-                width: 20px;
-                height: 20px;
-                position: relative;
-            }
-
-
-            .friends .heading a.more {
-                margin-right: 75px;
-            }
-
-            
-
-            .blog-preview h4 {
-                padding: 8px;
-                padding-left: 12px;
-                background-color: #EFCFEF;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD;
-                border-bottom: 2px solid #4D23CD;
-                color: #4D21CB;
-                font-family: 'dinkie9px', sans-serif;
-                font-weight: 400;
-                background-image: url("spacee5.jpeg");
-                background-position: right center;
-                background-repeat: no-repeat;
-                padding-right: 12px;
-                font-weight: 400;
-                letter-spacing: 0.045em;
-                margin: auto;
-            }
-
-            .blog-preview {
-                display: inline-block;
-                border: 2px solid #4D23CD;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD, 4px 4px #4e23cd48;
-                background-color: #FDF8FD;
-                width: 100%;
-                background: url("https://chairfiles.vercel.app/JINEBG.png");
-                background-repeat: repeat;
-                background-size: 50%;
-            }
-            .blog-preview p {
-                margin-left:32px;
-                background-repeat: no-repeat;
-                height:72px;
-                padding-top:12px;
-                text-indent: 16px;
-            }
-
-            a {
-                font-size: 18px;
-            }
-
-            li {
-                font-size: 18px;
-            }
-
-            .urlinfo {
-                font-size: 18px;
-            }
-
-            p {
-                font-size: 18px;
-            }
-
-            h4 {
-                font-size: 18px;
-            }
-
-            h1 {
-                font-size: 36px;
-            }
-
-            html, body {
-            }
-        </style>
-
-        <style>
-            a:hover {
-                cursor: url('https://chairfiles.vercel.app/cursor.png'), auto;
-            }
-            * {
-                cursor: url('https://chairfiles.vercel.app/cursor.png'), auto;
-            }
-
-            /* background changer stuff */
-
-            .innertime {
-                padding: 4px;
-                background-color:#F7E0FA;
-            }
-
-            .noonbutton{
-                box-shadow: inset 2px 2px #815CDA, 2px 2px #FDFDFD;
-                background-color:#F7E0FA;
-                display:inline-block;
-                justify-content: center;
-                float:left;
-                width:100%;
-                padding:3px
-
-            }
-
-            .noonbutton a {
-                font-family:"pixelmplus10";
-                font-weight: normal;
-                float:left;
-                padding-left: 8px;
-                color: #4D23CD;
-            }
-
-            .noonbutton img {
-                padding: 2px;
-                float:right;
-            }
-
-            .duskbutton{
-                box-shadow: inset 2px 2px #815CDA, 2px 2px #FDFDFD;
-                background-color:#F7E0FA;
-                display:inline-block;
-                justify-content: center;
-                float:center;
-                width:100%;
-                padding:3px
-
-            }
-
-            .duskbutton a {
-                font-family:"pixelmplus10";
-                font-weight: normal;
-                float:left;
-                padding-left: 8px;
-                color: #4D23CD;
-            }
-
-            .duskbutton img {
-                float:right;
-                padding: 2px;
-            }
-
-            .nightbutton{
-                box-shadow: inset 2px 2px #815CDA, 2px 2px #FDFDFD;
-                background-color:#F7E0FA;
-                display:inline-block;
-                justify-content: center;
-                float:right;
-                width:100%;
-                padding:3px
-
-            }
-
-            .nightbutton a {
-                font-family:"pixelmplus10";
-                font-weight: normal;
-                float:left;
-                padding-left: 8px;
-                color: #4D23CD;
-            }
-
-            .profile .blurbs .section .timeselector h4 {
-                color: #4D23CD;
-            }
-
-            /* make timeselector stay in the bottom right corner of the screen permanently */
-            .timeselectorwrapper {
-                position: fixed;
-                bottom: 100;
-                right: 0;
-                z-index: 100;
-            }
-
-            .nightbutton img {
-                float:right;
-                padding: 2px;
-            }
-
-
-
-            .fakebgthing {
-                background-attachment: fixed;
-                background-position: left center, left center, right center, right center;
-                background-size: 100% 100%, calc(calc(100vw - 1440px) / 2) auto, calc(calc(100vw - 1440px) / 2) auto, 100% 100;
-                image-rendering: pixelated;
-                background-repeat: repeat-y;
-                content: "";
-                display: block;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                z-index: -1;
-                background-color:#ff0000;
-            }
-
-            .origbg {
-                background:
-                        linear-gradient(to right, transparent, transparent),
-                        url("spacee5.jpeg") no-repeat,
-                        url("https://chairfiles.vercel.app/spaceheyrightbg.png") no-repeat,
-                        linear-gradient(to left, transparent, transparent);
-                background-attachment: fixed;
-                background-position: left center, left center, right center, right center;
-                image-rendering: pixelated;
-                background-repeat: repeat-y;
-                content: "";
-                display: block;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-                z-index: -2;
-
-            }
-
-            .noonbg {
-                background:
-                        linear-gradient(to right, transparent, transparent),
-                        url("spacee5.jpeg") no-repeat,
-                        url("spacee5.jpeg") no-repeat,
-                        linear-gradient(to left, transparent, transparent);
-                background-attachment: fixed;
-                background-position: left center, left center, right center, right center;
-                image-rendering: pixelated;
-                background-repeat: repeat-y;
-                content: "";
-                display: block;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-                visibility: hidden;
-            }
-
-            .duskbg {
-                background:
-                        linear-gradient(to right, transparent, transparent),
-                        url("spacee5.jpeg") no-repeat,
-                        url("spacee5.jpeg") no-repeat,
-                        linear-gradient(to left, transparent, transparent);
-                background-attachment: fixed;
-                background-position: left center, left center, right center, right center;
-                image-rendering: pixelated;
-                background-repeat: repeat-y;
-                content: "";
-                display: block;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-                visibility: hidden;
-            }
-
-
-
-            .nightbg {
-                background:
-                        linear-gradient(to right, transparent, transparent),
-                        url("spacee5.jpeg") no-repeat,
-                        url("spacee5.jpeg") no-repeat,
-                        linear-gradient(to left, transparent, transparent);
-                background-attachment: fixed;
-                background-position: left center, left center, right center, right center;
-                image-rendering: pixelated;
-                background-repeat: repeat-y;
-                content: "";
-                display: block;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-                visibility: hidden;
-            }
-
-            .fakebgthing:target {
-                visibility: visible;
-            }
-
-            .profile .blurbs .heading h4 {
-                font-weight: normal;
-                letter-spacing: 0.045em;
-            }
-
-            @media(max-width:1840px) {
-                .fakebgthing {
-                    background-size: 100% 100%, 180px 100%, 180px 100%, 100% 100%;
-                }
-                .timeselectorwrapper {
-                    right: 0;
-                }
-            }
-
-            @media(min-width:1840px) {
-                .timeselectorwrapper {
-                    right: calc(calc(calc(calc(calc(100% - 1440px) / 2) - 180px) / 2) - 13px);
-                }
-                .fakebgthing {
-                    background-size: 100% 100%, calc(calc(100% - 1440px) / 2) auto, calc(calc(100% - 1440px) / 2) auto, 100% 100%;
-                }
-            }
-
-            .profile-info {
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD;
-                border: 2px solid #4D23CD;
-            }
-
-            b, strong {
-                font-weight: normal;
-            }
-
-            .col h1 {
-                font-weight: normal;
-                font-size: 36px
-            }
-
-            .profile .friends {
-                border: 2px solid #4D23CD;
-                box-shadow: inset 0px 0px 0px 4px #DEDEDE, inset 0px 0px 0px 6px #4D23CD;
-                background-color: #FCF0FD;
-                font-weight: normal;
-                image-rendering: optimizeQuality;
-            }
-
-            .profile #comments {
-                border: 2px solid #4D23CD;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD;
-                background-color: #90F3E1;
-                font-weight: normal;
-                image-rendering: optimizeQuality;
-            }
-
-            .profile .friends .heading {
-                padding: 8px;
-                padding-left: 12px;
-                background-color: #E2E2E1;
-                box-shadow: inset 0px 0px 0px 4px #DEDEDE, inset 0px 0px 0px 6px #4D23CD;
-                border-bottom: 2px solid #4D23CD;
-                color: #4D21CB;
-                background-image: url("spacee5.jpeg");
-                background-position: right center;
-                background-repeat: no-repeat;
-                padding-right: 12px;
-                font-weight: 400;
-            }
-
-            .profile .friends .heading h4 {
-                font-weight: normal;
-                letter-spacing: 0.045em;
-            }
-
-            .profile .friends .inner .section .heading {
-                padding: 8px;
-                padding-left: 12px;
-                background-color: #EFCFEF;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD;
-                border-bottom: 2px solid #4D23CD;
-                color: #4D21CB;
-                font-family: 'dinkie9px', sans-serif;
-                font-weight: 400;
-                background-image: url("spacee5.jpeg");
-                background-position: right center;
-                background-repeat: no-repeat;
-                padding-right: 12px;
-                font-weight: 400;
-                letter-spacing: 0.045em;
-            }
-
-            .profile .blurbs .inner .section .heading {
-                padding: 8px;
-                padding-left: 12px;
-                background-color: #EFCFEF;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD;
-                border-bottom: 2px solid #4D23CD;
-                color: #4D21CB;
-                font-family: 'dinkie9px', sans-serif;
-                font-weight: 400;
-                background-image: url("spacee5.jpeg");
-                background-position: right center;
-                background-repeat: no-repeat;
-                padding-right: 12px;
-                font-weight: 400;
-                letter-spacing: 0.045em;
-            }
-
-            @media(min-width: 1440px){
-
-                .timeselector {
-                    transform: scale(100%);
-                }
-                .profile .blurbs {
-                    border: 2px solid #4D23CD;
-                    box-shadow: inset 0px 0px 0px 4px #DEDEDE, inset 0px 0px 0px 6px #4D23CD;
-                    background-color: #FCF0FD;
-                    font-weight: normal;
-                    font-family: 'pixelmplus10', sans-serif;
-                }
-
-                .profile .blurbs .heading {
-                    padding: 8px;
-                    padding-left: 12px;
-                    background-color: #E2E2E1;
-                    box-shadow: inset 0px 0px 0px 4px #DEDEDE, inset 0px 0px 0px 6px #4D23CD;
-                    border-bottom: 2px solid #4D23CD;
-                    color: #4D21CB;
-                    font-family: 'dinkie9px', sans-serif;
-                    background-image: url("spacee5.jpeg");
-                    background-position: right center;
-                    background-repeat: no-repeat;
-                    padding-right: 12px;
-                    font-weight: 400;
-                    letter-spacing: 0.045em;
-                }
-                .inner .section {
-                    color: rgb(37, 37, 37);
-                    font-size: 18px;
-                    padding:4px;
-                }
-
-                .profile .blurbs .section h4 {
-                    color: rgb(37, 37, 37);
-                    font-size: 18px;
-                }
-
-            }
-
-            @media(max-width: 1440px){
-                .profile .blurbs .heading h4 {
-                    font-weight: normal;
-                    letter-spacing: 0.045em;
-                    font-family: 'dinkie9px', sans-serif;
-                }
-
-                .inner .section {
-                    color: #4D21CB;
-                    font-size: 18px;
-                    padding:4px;
-                }
-
-                .profile .blurbs .section h4 {
-                    color: #4D21CB;
-                    font-size: 18px;
-                }
-
-                .timeselector {
-                    transform: scale(0);
-                    display: none;
-                }
-                .profile .blurbs {
-                    border: 2px solid #4D23CD;
-                    box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD, 4px 4px #4e23cd48;
-                    font-weight: 400;
-                    font-family: 'pixelmplus10', sans-serif;
-                    font-size: 7px;
-                    color: #4D21CB;
-                    background-color:#FDF8FD;
-                }
-
-                .profile .blurbs .heading {
-                    padding: 8px;
-                    padding-left: 12px;
-                    background-color: #EFCFEF;
-                    box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD;
-                    border-bottom: 2px solid #4D23CD;
-                    color: #4D21CB;
-                    font-family: 'dinkie9px', sans-serif;
-                    font-weight: 400;
-                    background-image: url("spacee5.jpeg");
-                    background-position: right center;
-                    background-repeat: no-repeat;
-                    padding-right: 12px;
-                    font-weight: 400;
-                    letter-spacing: 0.045em;
-                }
-            }
-
-            .details-table tbody tr td p {
-                font-family: "pixelmplus10";
-            }
-
-            .profile .friends .person p {
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD;
-                border-bottom: 2px solid #4D23CD;
-                color: #4D21CB;
-                padding: 4px;
-                background-color: #EFCFEF;
-                width: 101px;
-                font-weight:normal;
-            }
-
-            #comments .inner {
-                background: url("spacee5.jpeg"), rgb(216, 230, 242);
-                background-size:contain;
-                background-repeat:repeat-x;
-                margin: 6px;
-                margin-top: auto;
-            }
-
-            #comments .heading {
-                padding: 8px;
-                padding-left: 12px;
-                background-color: #EFCFEF;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD;
-                border-bottom: 2px solid #4D23CD;
-                color: #4D21CB;
-                font-family: 'dinkie9px', sans-serif;
-                font-weight: 400;
-                background-image: url("spacee5.jpeg");
-                background-position: right center;
-                background-repeat: no-repeat;
-                padding-right: 12px;
-                font-weight: 400;
-                letter-spacing: 0.045em;
-            }
-
-            #comments {
-                margin: 20px 0;
-                padding-left: -4px;
-            }
-
-            .comments-table td:first-child {
-                background: #FDF8FD;
-                font-weight: normal;
-                max-width:25%;
-                justify-content: left;
-                direction: rtl;
-                color: #4883CD;
-                outline:#00000000;
-                border: none;
-            }
-
-            .comments-table td:first-child a {
-                color: #4883CD;
-                outline:#00000000;
-                border: none;
-                max-width: 100%;
-            }
-
-            .comments-table td:last-child {
-                background: #FDF8FD;
-                font-weight: normal;
-                color: #4F1CCF;
-                font-size:18px;
-                outline:#00000000;
-                border: none;
-                max-width:75%
-            }
-
-            .comments-table td:last-child a {
-                color: #4F1CCF;
-                font-size:18px;
-                outline:#00000000;
-                border: none;
-                max-width: 100%;
-            }
-
-            .comments-table td:first-child p {
-                max-width: 100%;
-            }
-
-            .comments-table td:last-child p {
-                max-width: 100%;
-            }
-
-            .profile .friends .person {
-                width: 105px;
-                display: inline-block;
-                padding: 0 20px 15px 0;
-                border: 2px solid #4D23CD;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD, 4px 4px #4e23cd48;
-                background-color: #FDF8FD;
-            }
-
-            .profile .friends .person img:not(.icon) {
-                max-width: 85px;
-                max-height: 85px;
-                display: block;
-                margin: 0 auto;
-                align-self: center;
-                padding-left: 16px;
-            }
-
-            .friends .inner .comments-table tr td .report a img {
-                image-rendering: pixelated;
-                font-size: 0;
-            }
-            .friends .inner .comments-table tr td .report a img:before {
-                font-size: 1em;
-                display: block
-            }
-            .friends .inner .comments-table tr td .report a:before {
-                content: url("https://chairfiles.vercel.app/priv.png");
-            }
-
-            .comments-table td:first-child img:not(.icon) {
-                width: 50px;
-                max-width: 100%;
-                max-height: 100px;
-                padding-right: 4px;
-            }
-
-
-            .comments-table tbody {
-                background-color: #FDF8FD;
-                border: none;
-            }
-
-            .comments-table {
-                padding: 6px;
-                border: none;
-            }
-
-            footer {
-                border: 2px solid #4D23CD;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD, 4px 4px #4e23cd48;
-                font-weight: 400;
-                font-family: 'pixelmplus10', sans-serif;
-                color: #4D21CB;
-                background-color:#FDF8FD;
-                margin: 0px auto;
-                padding: 0 0 3px 0;
-                width: 95%;
-                text-align: center;
-                justify-content: center;
-            }
-
-            footer p {
-                width: 95%;
-                vertical-align: middle;
-                display: inline-block;
-            }
-            footer ul {
-                width: 95%;
-                vertical-align: middle;
-                display: inline-block;
-            }
-
-
-            footer:before {
-                display: block;
-                padding: 8px;
-                padding-left: 12px;
-                background-color: #EFCFEF;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD;
-                border-bottom: 2px solid #4D23CD;
-                color: #4D21CB;
-                background-image: url("spacee5.jpeg");
-                background-position: right center;
-                background-repeat: no-repeat;
-                padding-right: 12px;
-                font-weight: 400;
-                content: "Footer";
-                font-size: 18px;
-                text-align: left;
-                letter-spacing: 0.045em;
-            }
-
-            .mood {
-                border: 2px solid #4D23CD;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD, 4px 4px #4e23cd48;
-                font-weight: 400;
-                font-family: 'pixelmplus10', sans-serif;
-                color: #4D21CB;
-                background-color:#FDF8FD;
-                margin: 0px auto;
-                padding: 0 0 3px 0;
-                margin-bottom: 8px;
-            }
-
-            .mood:before {
-                display: block;
-                padding: 8px;
-                padding-left: 12px;
-                background-color: #EFCFEF;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD;
-                border-bottom: 2px solid #4D23CD;
-                color: #4D21CB;
-                background-image: url("spacee5.jpeg");
-                background-position: right center;
-                background-repeat: no-repeat;
-                padding-right: 12px;
-                font-weight: 400;
-                content: "Mood";
-                font-size: 18px;
-                text-align: left;
-                letter-spacing: 0.045em;
-            }
-            
-            .profile .mood p {
-                margin-left: 12px;
-            }
-
-            span[itemprop="name"]:before {
-                display: block;
-                padding: 8px;
-                padding-left: 12px;
-                background-color: #EFCFEF;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD;
-                border-bottom: 2px solid #4D23CD;
-                font-family: 'dinkie9px', sans-serif;
-                color: #4D21CB;
-                background-image: url("spacee5.jpeg");
-                background-position: right center;
-                background-repeat: no-repeat;
-                padding-right: 12px;
-                font-weight: 400;
-                content: "Name";
-                font-size: 18px;
-                text-align: left;
-                letter-spacing: 0.045em;
-            }
-            
-            span[itemprop="name"] {
-                border: 2px solid #4D23CD;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD, 4px 4px #4e23cd48;
-                font-weight: 400;
-                letter-spacing: 0.045em;
-                color: #4D21CB;
-                font-family: 'dinkie9px', sans-serif;
-                background-color:#FDF8FD;
-                width: auto;
-                max-width: 450px;
-                text-align: center;
-                display: block;
-                justify-content: center;
-            }
-
-            nav {
-                margin-top: 4px;
-                border: 2px solid #4D23CD;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD, 4px 4px #4e23cd48;
-                font-weight: 400;
-                font-family: 'pixelmplus10', sans-serif;
-                color: #4D21CB;
-                background-color:#FDF8FD;
-                margin: 0px auto;
-                padding: 0 0 3px 0;
-                width: 95%;
-                align-content: center;
-
-                margin-top: 4px;
-            }
-
-            nav .top {
-                margin-left:4px;
-                margin-right:4px;
-                background-color: #FDF8FD;
-                box-shadow: inset 0px 0px 0px 2px #4D23CD;
-                margin-bottom: -2px;
-                margin-top:-2px;
-            }
-
-            nav {
-
-            }
-
-            .top .left a img {
-                filter: brightness(0) saturate(100%) invert(16%) sepia(100%) saturate(3681%) hue-rotate(256deg) brightness(79%) contrast(110%);
-            }
-
-            .logout-btn {
-                color: #4D23CD;
-                font-family: 'pixelmplus10', sans-serif;
-                font-size: 18px;
-            }
-
-            .center form label {
-                font-size: 18px;
-            }
-
-            #q {
-                background: #f0d1f1;
-                box-shadow: inset 2px 2px #815CDA, 2px 2px #FDFDFD;
-                color: #4d23cf;
-                font-size: 15px;
-                font-weight: normal;
-                text-shadow: #f0d1f1 0px 2px 5px;
-                border: 2px solid #f0d1f1;
-                border-radius: 2px;
-                padding: 4px;
-            }
-
-            nav .links {
-                background:none;
-                margin-bottom:-2px;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD;
-                padding:8px;
-                padding-left: 16px;
-                background-color: #FDF8FD;
-                margin-top:2px;
-
-            }
-
-            nav .links a {
-                text-shadow: 0 0 7px #00000000;
-                color: #4D23CD;
-            }
-
-            nav .links .special a  {
-                text-shadow: 0 0 7px #00000000;
-                color: #4D23CD;
-            }
-
-            nav:before {
-                display: block;
-                padding: 8px;
-                padding-left: 12px;
-                background-color: #EFCFEF;
-                box-shadow: inset 0px 0px 0px 4px #90F3E1, inset 0px 0px 0px 6px #4D23CD;
-                border-bottom: 2px solid #4D23CD;
-                color: #4D21CB;
-                background-image: url("spacee5.jpeg");
-                background-position: right center;
-                background-repeat: no-repeat;
-                padding-right: 12px;
-                font-weight: 400;
-                content: "Header";
-                font-size: 18px;
-                letter-spacing: 0.045em;
-            }
-
-
-        </style>
-        <div class="timeselectorwrapper">
-            <div class="timeselector">
-                <div class="contact" style="width: 90%; ">
-                    <div class="heading">
-                        <h4 style="align-self:left;">Time</h4>
-                    </div>
-                    <!-- time selector -->
-                    <div class="innertime">
-                                <div class="noonbutton">
-                                    <a href="#noon">Go to Noon</a>
-                                    <img src="spacee5.jpeg"/>
-                                </div>
-                                <div class="duskbutton">
-                                    <a href="#dusk">Go to Dusk</a>
-                                    <img src="spacee5.jpeg"/>
-                                </div>
-                                <div class="nightbutton">
-                                    <a href="#night">Go to Night</a>
-                                    <img src="spacee5.jpeg"/>
-                                </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-
-        <!-- backgrounds -->
-
-        <div class="fakebgthing origbg"></div>
-        <div class="fakebgthing noonbg" id="noon"></div>
-        <div class="fakebgthing duskbg" id="dusk"></div>
-        <div class="fakebgthing nightbg" id="night"></div>
-
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>MySpace 2004</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="main-body">
+	<nav>
+		<div class="nav-top">
+			<div class="links">
+				<a href="#">MySpace.com</a>&nbsp;|&nbsp;<a href="#">Home</a>
+			</div>
+			<div class="search">
+				<label for="forGeneral">
+					The Web
+				</label>
+				<input type="radio" name="search" id="forGeneral" />
+				<label for="forMyspace">
+					MySpace
+				</label>
+				<input type="radio" name="search" id="forMyspace" checked />
+				<input type="text" name="" id="" />
+				<button> search</button>
+			</div>
+			<div class="links"><a href="#">Help</a>&nbsp;|&nbsp;<a href="#">SignUp</a></div>
+		</div>
+		<div class="nav-middle"></div>
+		<div class="nav-bottom">
+			<ul class="inline-list">
+				<li><a href="#">home</a></li>
+				<li><a href="#">browse</a></li>
+				<li><a href="#">search</a></li>
+				<li><a href="#">invite</a></li>
+				<li><a href="#">film</a></li>
+				<li><a href="#">mail</a></li>
+				<li><a href="#">blog</a></li>
+				<li><a href="#">favorites</a></li>
+				<li><a href="#">forum</a></li>
+				<li><a href="#">group</a></li>
+				<li><a href="#">events</a></li>
+				<li><a href="#">video</a></li>
+				<li><a href="#">music</a></li>
+				<li><a href="#">comedy</a></li>
+				<li><a href="#">classifieds</a></li>
+			</ul>
+		</div>
+	</nav>
+	<section class="profile-body">
+		<div class="col user-info">
+			<h2 class="name">L&trade;</h2>
+			<div class="identity">
+				<div class="avatar">
+					<img src="https://secure.gravatar.com/avatar/e2a5b810db87d57c68e4712d8e9a6e00?size=500" alt="avatar" />
+					<div class="media-view">
+						View My: <a href="http://#">Pics</a>&nbsp;|&nbsp;<a href="http://#">Videos</a>
+					</div>
+				</div>
+				<div class="details">
+					<ul>
+						<li>"Feelin' nostalgic"</li>
+						<li>&nbsp;</li>
+						<li>Male</li>
+						<li><span class="age"></span> years old</li>
+						<li>RESTON, Virginia</li>
+						<li>United States</li>
+						<li class="is-online"></li>
+						<li>Last Login: <span class="date"></span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="small-panel contact-panel">
+				<div class="panel-header">Contacting L&trade;</div>
+				<div class="buttons-container">
+					<div class="row">
+						<a intent="reply" class="btn act-1"></a>
+						<a href="#" class="btn act-2"></a>
+					</div>
+					<div class="row">
+						<a intent="add" class="btn act-3"></a>
+						<a href="#" class="btn act-4"></a>
+					</div>
+					<div class="row">
+						<a href="#" class="btn act-5"></a>
+						<a href="#" class="btn act-6"></a>
+					</div>
+					<div class="row">
+						<a href="#" class="btn act-7"></a>
+						<a href="#" class="btn act-8"></a>
+					</div>
+				</div>
+			</div>
+			<div class="small-panel m-details-panel">
+				<div class="panel-header">L&trade;'s Interests</div>
+				<div class="row">
+					<div class="sm-col">
+						<p>General:</p>
+					</div>
+					<div class="sm-col">
+						<p>Shiny things that animate all pretty on the web.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="sm-col">
+						<p>Music:</p>
+					</div>
+					<div class="sm-col">
+						<p>Dead. Its all dead now. Punk is dead.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="sm-col">
+						<p>Movies:</p>
+					</div>
+					<div class="sm-col">
+						<p>dystopian movies from the 80's set in the future.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="sm-col">
+						<p>Television:</p>
+					</div>
+					<div class="sm-col">
+						<p>How I Met Your 2 and a half men</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="sm-col">
+						<p>Heroes:</p>
+					</div>
+					<div class="sm-col">
+						<p>Dr. Phill</p>
+					</div>
+				</div>
+			</div>
+			<div class="small-panel m-details-panel">
+				<div class="panel-header">L&trade;'s Details</div>
+				<div class="row">
+					<div class="sm-col">
+						<p>Status:</p>
+					</div>
+					<div class="sm-col">
+						<p>In a relationship</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="sm-col">
+						<p>Here for:</p>
+					</div>
+					<div class="sm-col">
+						<p>Friends</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="sm-col">
+						<p>Orientation:</p>
+					</div>
+					<div class="sm-col">
+						<p>Identify as a cucumber</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="sm-col">
+						<p>Hometown:</p>
+					</div>
+					<div class="sm-col">
+						<p>Boston, MA</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="sm-col">
+						<p>Body type:</p>
+					</div>
+					<div class="sm-col">
+						<p>More to love</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="sm-col">
+						<p>Ethincity:</p>
+					</div>
+					<div class="sm-col">
+						<p>Mixed</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="sm-col">
+						<p>Smoke / Drink:</p>
+					</div>
+					<div class="sm-col">
+						<p>No / Yes</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="sm-col">
+						<p>Occupation:</p>
+					</div>
+					<div class="sm-col">
+						<p>Full Stack Flap-Jack</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col user-content">
+			<div class="top-banner">
+				<h1>L&trade; is in your extended network</h1>
+			</div>
+			<div class="profile-section" id="blog-container"></div>
+			<div class="profile-section" id="blurbs-container">
+				<div class="section-header">L&trade;'s blurbs</div>
+				<div class="section-subheader">About me:</div>
+				<p>Did you know the original MySpace structure was built entirely on tables? like most of the web, it was overly cumbersome, but brought so many people together, nonetheless.</p>
+				<div class="section-subheader">Who I'd Like to meet:</div>
+				<p>Web developers who know how to meme.</p>
+			</div>
+			<div class="profile-section" id="friend-container">
+				<div class="section-header">L&trade;'s Friend space</div>
+				<div class="friend-count">L&trade; has <b>312</b> friends.</div>
+				<div class="friend-grid">
+					<div class="row">
+						<div class="friend">
+							<a href="#" class="name" target="_blank">user</a>
+							<img src="#" alt="friend" class="photo" />
+						</div>
+						<div class="friend">
+							<a href="#" class="name" target="_blank">user</a>
+							<img src="#" alt="friend" class="photo" />
+						</div>
+						<div class="friend">
+							<a href="#" class="name" target="_blank">user</a>
+							<img src="#" alt="friend" class="photo" />
+						</div>
+						<div class="friend">
+							<a href="#" class="name" target="_blank">user</a>
+							<img src="#" alt="friend" class="photo" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="friend">
+							<a href="#" class="name" target="_blank">user</a>
+							<img src="#" alt="friend" class="photo" />
+						</div>
+						<div class="friend">
+							<a href="#" class="name" target="_blank">user</a>
+							<img src="#" alt="friend" class="photo" />
+						</div>
+						<div class="friend">
+							<a href="#" class="name" target="_blank">user</a>
+							<img src="#" alt="friend" class="photo" />
+						</div>
+						<div class="friend">
+							<a href="#" class="name" target="_blank">user</a>
+							<img src="#" alt="friend" class="photo" />
+						</div>
+					</div>
+				</div>
+				<a href="#" class="view-all-f">View All of L&trade;'s friends</a>
+			</div>
+			<div class="profile-section" id="comments-container">
+				<div class="section-header">Comments</div>
+				<div class="comment-details">
+					<div class="comments-to-display">Displaying <b>1</b> of <b></b> comments</div>
+					<div class="comment-actions"><a href="#">View All</a>&nbsp;|&nbsp;<a href="#" id="triggerComment">Add Comment</a></div>
+				</div>
+				<div class="comment-stream">
+					<div class="comment user03324">
+						<div class="dp-group">
+							<a href="#" class="prof-name">Phil</a>
+							<img src="http://www.fillcollins.place/300/400" alt="profile photo" />
+							<p>Phil</p>
+							<span class="user-status"></span>
+						</div>
+						<div class="comment-cont">
+							<div class="post-info">
+								<span class="date">Jan 1, 2004</span>
+								<div class="c-actions">
+									<ul class="inline-list">
+										<li><a href="#">Reply</a></li>
+										<li><a href="#">Report</a></li>
+										<li><a href="#">View All</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="message-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur aspernatur facilis similique consequatur laboriosam vel laudantium quis pariatur blanditiis modi veniam quos, deleniti expedita. Earum, repudiandae. Ipsa, quibusdam architecto libero?</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+<footer>
+	<ul class="inline-list">
+		<li><a href="#">About</a></li>
+		<li><a href="#">FAQ</a></li>
+		<li><a href="#">Terms</a></li>
+		<li><a href="#">Privacy</a></li>
+		<li><a href="#">Saftey Tips</a></li>
+		<li><a href="#">Contact MySpace</a></li>
+		<li><a href="#">Report Inappropriate Content</a></li>
+		<li><a href="#">Promote!</a></li>
+		<li><a href="#">Advertise</a></li>
+		<li><a href="#">MySpace International</a></li>
+	</ul>
+</footer>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/396624/ltrade.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
 </html>
