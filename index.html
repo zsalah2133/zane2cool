@@ -1,3 +1,71 @@
+<script>
+const slider = document.querySelector('.gallery');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', e => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener('mouseleave', _ => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mouseup', _ => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mousemove', e => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const SCROLL_SPEED = 3;
+  const walk = (x - startX) * SCROLL_SPEED;
+  slider.scrollLeft = scrollLeft - walk;
+});
+
+</script>
+
+<style>
+	.gallery {
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: repeat(10, 46.296vw);
+	grid-template-rows: 1fr;
+	grid-column-gap: 1rem;
+	grid-row-gap: 1rem;
+	overflow: scroll;
+	height: 500px;
+  width: 500px;
+	scroll-snap-type: both mandatory;
+	scroll-padding: 1rem;
+}
+
+.active {
+	scroll-snap-type: unset;
+}
+
+li {
+	scroll-snap-align: center;
+	display: inline-block;
+	border-radius: 3px;
+	font-size: 0;
+}
+
+
+
+	</style>
+
+
+
+
+
+
+
+
 <style>
 
 	html {
@@ -1314,91 +1382,19 @@ Zane's Spam
 	
 	
 	
-	
-	
-	<html>
-  <head>
-    <title>Slideshow Images</title>
-    <style>
-      .slider {
-        width: 500px;
-        height: 500px;
-        background-color: transparent;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 0px;
-        text-align: center;
-        overflow: hidden;
-      }
-      .image-container {
-        width: 1500px;
-        background-color: transparent;
-        height: 500px;
-        clear: both;
-        position: relative;
-        -webkit-transition: left 2s;
-        -moz-transition: left 2s;
-        -o-transition: left 2s;
-        transition: left 2s;
-      }
-      .slide {
-        float: left;
-        margin: 0px;
-        padding: 0px;
-        position: relative;
-      }
-      #slide-25:target ~ .image-container {
-        left: 0px;
-      }
-      #slide-26:target ~ .image-container {
-        left: -500px;
-      }
-      #slide-27:target ~ .image-container {
-        left: -1000px;
-      }
-      .buttons {
-        position: relative;
-        top: 10px;
-      }
-      .buttons a {
-        display: inline-block;
-        height: 35px;
-        width: 35px;
-        border-radius: 50px;
-        background-color: pink;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="slider">
-      <span id="slide-25"></span>
-      <span id="slide-26"></span>
-      <span id="slide-27"></span>
-      <div class="image-container">
-        <img src="ny4.jpeg" class="slide" width="500" height="500" />
-        <img src="ny1.jpeg" class="slide" width="500" height="500" />
-        <img src="ny2.jpeg" class="slide" width="500" height="500" />
-      </div>
-      <div class="buttons">
-        <a href="#slide-25"></a>
-        <a href="#slide-26"></a>
-        <a href="#slide-27"></a>
-      </div>
-    </div>
-  </body>
-</html>
 
-<center><div style="background-color:transparent;padding:2%;">
+	
+	
+	
+	<ul class="gallery">
+	<li style="background: ny4.jpeg;"></li>
+	<li style="background: ny1.jpeg;"></li>
+	<li style="background: ny2.jpeg;"></li>
+</ul>
+	
+	<center><div style="background-color:transparent;padding:2%;">
 <img src="nyxtext.png" alt="logo" style="width:200px;height:125px;">
 	</center>
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 		
