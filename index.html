@@ -27,6 +27,298 @@ slider.addEventListener('mousemove', e => {
   slider.scrollLeft = scrollLeft - walk;
 });
 
+
+
+
+
+// music player
+
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+};
+
+var Vest = {};
+Vest.vestElem = document.createElement('vestride');
+Vest.vStyle = Vest.vestElem.style;
+Vest.vendors = 'Webkit Moz O ms'.split(' ');
+Vest.test = function(prop) {
+    if (Vest.vStyle[prop] !== undefined) {
+        return prop;
+    }
+    for (var x = 0; x < this.vendors.length; x++) {
+        if (Vest.vStyle[this.vendors[x] + prop.capitalize()] !== undefined) {
+            return this.vendors[x] + prop.capitalize();
+        }
+    }
+
+    return false;
+};
+
+
+window.Player = (function(Vest, window) {
+    "use strict";
+
+    var animationPlayState = Vest.test('animationPlayState');
+
+    var Player = function() {
+        var self = this;
+        this.player = window.document.querySelector('.player');
+        this.track = this.player.querySelector('audio');
+        this.bar = this.player.querySelector('.progress');
+        this.lengthDisplay = this.player.querySelector('.track-length');
+        this.timeDisplay = this.player.querySelector('.current-time');
+        this.playButton = this.player.querySelector('.play');
+        this.comments = this.player.querySelector('.comments');
+        this.favorite = this.player.querySelector('.favorite');
+        this.trackLength = parseInt(this.player.dataset.length, 10);
+        this.trackStart = parseInt(this.player.dataset.start, 10) || 0;
+        this.playhead = this.trackStart;
+        this.loading = window.document.querySelector('.loading');
+        
+        this.frameId = null; // RequestAnimationFrame ID
+
+        this.remainingTime = false;
+        this.isPlaying = false;
+        this.isInitialized = false;
+        this.ended = false;
+
+        this.track.addEventListener('loadstart', function(evt) {
+            self.showLoader();
+        });
+
+        this.track.addEventListener('canplaythrough', function(evt) {
+            self.hideLoader();
+        });
+
+
+        // Song ended
+        this.track.addEventListener('ended', function(evt) {
+            self.togglePlay();
+            self.ended = true;
+        });
+
+        // Update when seeking is finished
+        this.track.addEventListener('seeked', function() {
+            self.playhead = this.currentTime;
+            self.update(new Date().getTime(), 0);
+        });
+
+        // Play button
+        this.playButton.addEventListener('click', function() {
+            if (!self.isInitialized) {
+                self.init();
+            } else {
+                self.togglePlay();
+            }
+        });
+
+        // Time display
+        this.lengthDisplay.addEventListener('click', function() {
+            self.toggleTime();
+        });
+
+        // Comments
+        this.comments.addEventListener('click', function() {
+            this.classList.toggle('has-comments');
+        });
+
+        // Favorite
+        this.favorite.addEventListener('click', function() {
+            this.classList.toggle('favorited');
+        });
+
+        this.updateTimeLabels();
+
+        if (this.track.readyState === 4 || this.track.readyState === 3) {
+            this.hideLoader();
+        }
+    };
+
+    Player.prototype.togglePlay = function() {
+        if (this.ended) {
+            this.reset();
+            this.ended = false;
+            this.play();
+        } else if (this.isPlaying) {
+            this.pause();
+        } else {
+            this.play();
+        }
+    };
+
+    Player.prototype.play = function() {
+        this.player.classList.add('playing');
+        this.track.play();
+        this.lastTime = new Date().getTime();
+        this.getAnimationFrame();
+        this.bar.style[animationPlayState] = 'running';
+        this.isPlaying = true;
+    };
+
+    Player.prototype.pause = function() {
+        this.player.classList.remove('playing');
+        this.track.pause();
+        window.cancelAnimationFrame(this.frameId);
+        this.bar.style[animationPlayState] = 'paused';
+        this.isPlaying = false;
+    };
+
+    Player.prototype.reset = function() {
+        this.percentDone = 0;
+        this.bar.style.width = 0;
+    };
+
+    Player.prototype.toggleTime = function() {
+        this.remainingTime = !this.remainingTime;
+        this.updateTimeLabels();
+    };
+
+    Player.prototype.getTime = function() {
+        return this.getMinutes('now') + ':' + this.getSeconds('now');
+    };
+
+    Player.prototype.getTimeLeft = function() {
+        return '-' + this.getMinutes('remaining') + ':' + this.getSeconds('remaining');
+    };
+
+    Player.prototype.getTotalTime = function() {
+        return this.getMinutes('total') + ':' + this.getSeconds('total');
+    };
+
+    Player.prototype.getMinutes = function(context) {
+        var time;
+        if (context === 'remaining') {
+            time = this.trackLength - this.playhead;
+            time -= 1; // Make 2:60 = 3:00
+        } else if (context === 'total') {
+            time = this.trackLength;
+        } else if (context === 'now') {
+            time = this.playhead;
+        } else {
+            return 0;
+        }
+        return Math.floor(time / 60);
+    };
+
+    Player.prototype.getSeconds = function(context) {
+        var time, seconds;
+        if (context === 'remaining') {
+            time = this.trackLength - this.playhead;
+        } else if (context === 'total') {
+            time = this.trackLength;
+        } else if (context === 'now') {
+            time = this.playhead;
+        } else {
+            return 0;
+        }
+
+        seconds = Math.round(time) % 60;
+        if (seconds < 0) {
+            console.warn('how did you get less than zero seconds?', seconds);
+            seconds = 0;
+        }
+        if (seconds < 10) {
+            seconds = '0' + seconds;
+        }
+        return seconds;
+    };
+
+    Player.prototype.getAnimationFrame = function() {
+        var self = this;
+        this.frameId = window.requestAnimationFrame(function(time) {
+            self.step(time);
+        });
+    };
+
+    Player.prototype.init = function() {
+        var self = this;
+        this.percentDone = this.updatePlayhead(this.playhead);
+
+        // Have problems with this event not firing on page refresh, only when entered into address bar
+        console.log('track readyState: ' + this.track.readyState);
+        if (this.track.readyState === 4 || this.track.readyState === 3) {
+            this.isInitialized = true;
+            this.currentTime = self.trackStart;
+            this.hideLoader();
+            this.play();
+        } else {
+            this.track.addEventListener('canplay', function(evt) {
+                console.log('canplay', this.readyState);
+                self.isInitialized = true;
+                self.hideLoader();
+                self.play();
+            });
+        }
+    };
+
+    Player.prototype.showLoader = function() {
+        this.loading.style.display = 'block';
+    };
+    
+    Player.prototype.hideLoader = function() {
+        this.loading.style.display = 'none';
+    };
+
+    Player.prototype.update = function(time, elapsedTime) {
+        this.playhead += elapsedTime;
+        this.lastTime = time;
+        this.percentDone = this.updatePlayhead(this.playhead);
+        this.updateTimeLabels();
+    };
+
+    Player.prototype.updatePlayhead = function(secondsPast) {
+        var percent = secondsPast / this.trackLength;
+        this.bar.style.width = Math.min(100, percent * 100) + '%';
+        return percent;
+    };
+
+    Player.prototype.setRightLabel = function(str) {
+        this.lengthDisplay.textContent = str;
+    };
+
+    Player.prototype.setLeftLabel = function(str) {
+        this.timeDisplay.textContent = str;
+    };
+
+    Player.prototype.updateTimeLabels = function() {
+        var right = this.remainingTime ? this.getTimeLeft() : this.getTotalTime();
+        this.setRightLabel(right);
+        this.setLeftLabel(this.getTime());
+    };
+
+    Player.prototype.step = function(time) {
+        var elapsed = (time - this.lastTime) / 1000;
+        if (elapsed > 1) {
+            this.update(time, elapsed);
+        }
+
+        if (this.percentDone < 1 && this.isPlaying) {
+            this.getAnimationFrame();
+        }
+    };
+
+    return Player;
+}(Vest, window));
+
+
+// Document ready
+document.addEventListener('DOMContentLoaded', function() {
+
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
+    }
+
+    var player = new Player();
+});
+
+
+
+
+
+
+	
 </script>
 
 <style>
@@ -1065,6 +1357,344 @@ body {
       cursor: url("ak47.png"), auto;
 }
 
+
+@import "compass/css3";
+
+//music player
+
+$default-transition-property: all;
+$default-transition-duration: .2s;
+$default-transition-function: ease-out;
+
+$purple: #2a0d4c;
+$dark-purple: #661995;
+$very-dark-purple: #2c0b40;
+$light-gray: #c1c1c1;
+$gray: #3f4245;
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+@mixin striped($color, $angle) {
+    background-color: $color;
+    $lighten: rgba(255, 255, 255, .15);
+    @include background-image(linear-gradient($angle, $lighten 25%, transparent 25%, transparent 50%, $lighten 50%, $lighten 75%, transparent 75%, transparent));
+}
+
+@mixin animation($args) {
+    -webkit-animation: $args;
+       -moz-animation: $args;
+         -o-animation: $args;
+            animation: $args;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+i {
+    font-style: normal;
+}
+
+
+body {
+    font-family: Tahoma, Arial;
+}
+
+
+h6 {
+  text-align: center;
+  margin: 8px 0 0;
+  
+  a {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.player {
+    width: 300px;
+    margin: 50px auto;
+    border-radius: 3px;
+    
+    
+    @include single-transition;
+}
+
+.title {
+    color: $purple;
+    font-size: 9px;
+    width: 100%;
+    padding: 2px 0 2px 15px;
+    border-radius: 3px 3px 0 0;
+    border-bottom: 1px solid #c7c5c5;
+    background: #fbf6f2;
+    @include single-transition;
+}
+
+.details {
+    position: relative;
+    z-index: 1;
+    height: 25px;
+    @include background(linear-gradient(top, #f8f4f1, #e1e0de));
+    border-radius: 0 0 3px 3px;
+    border-top: 1px solid white;
+}
+
+.details > div {
+    float: left;
+    margin-left: 10px;
+}
+
+
+.favorite,
+.track-length,
+.play {
+    cursor: pointer;
+}
+
+.details > div:first-child {
+    margin-left: 0;
+}
+
+.play {
+    position: relative;
+    top: -3px;
+    left: -1px;
+    width: 30px;
+    height: 28px;
+    margin-right: 6px;
+    border-bottom-left-radius: 3px;
+}
+
+// .play:hover svg path {
+//     stroke: #FFF;
+//     stroke-width: 1;
+//     @include single-transition;
+// }
+
+.play .icon {
+    position: absolute;
+    font-size: 12px;
+    top: 7px;
+    left: 12px;
+    color: $very-dark-purple;
+    text-shadow: none;
+    @include single-transition(color);
+}
+
+.play:hover {
+    .icon {
+        color: white;
+    }
+
+    .playing & .icon::before,
+    .playing & .icon::after {
+        background: white;
+    }
+}
+
+.playing .play .icon {
+    text-indent: -9999px;
+}
+
+.playing .play .icon::before,
+.playing .play .icon::after {
+    content: '';
+    position: absolute;
+    left: 1px;
+    top: 3px;
+    width: 3px;
+    height: 8px;
+    background: $very-dark-purple;
+    @include single-transition(background-color);
+}
+
+.playing .play .icon::after {
+    left: 5px;
+}
+
+// Seek buttons //
+div.seek {
+    position: relative;
+    width: 13px;
+    height: 10px;
+    margin-top: 7px;
+    margin-left: 6px;
+}
+
+.seek.forward {
+    margin-left: 12px;
+    margin-right: -6px;
+}
+
+.seek::before,
+.seek::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    border: 4px solid transparent;
+    border-right-color: $light-gray;
+    border-right-width: 6px;
+}
+
+.seek::before {
+    left: -5px;
+}
+
+.seek::after {
+    left: 0px;
+    content: " "
+}
+
+.forward::before,
+.forward::after {
+    border: 4px solid transparent;
+    border-left-color: $light-gray;
+    border-left-width: 6px;
+}
+
+// Progress Bar //
+.track {
+    position: relative;
+    margin-top: 8px;
+    width: 108px;
+    height: 7px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .25), 0 1px 2px rgba(255, 255, 255, .7);
+    border-radius: 3px;
+}
+
+.track .progress {
+    width: 55%; // Just as a preview
+    height: 100%;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, .25);//, 0 1px 1px rgba(0, 0, 0, .25);
+    @include striped(lighten($dark-purple, 15%), -45deg);
+    background-size: 20px 20px;
+    background-repeat: repeat-x;
+    @include single-transition(width, .1s, ease-in-out);
+}
+
+.track.active .progress {
+    @include animation(progress-bar 1.2s linear infinite);
+}
+
+@-webkit-keyframes progress-bar {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -20px 0;
+    }
+}
+@-moz-keyframes progress-bar {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -20px 0;
+    }
+}
+@-o-keyframes progress-bar {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -20px 0;
+    }
+}
+@keyframes progress-bar {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -20px 0;
+    }
+}
+
+div.current-time {
+    margin-right: -6px;
+    margin-left: 6px;
+}
+
+// Track Length //
+.track-length,
+.current-time {
+    margin-top: 4px;
+    font-family: 'Open Sans', Arial;
+    color: $gray;
+    font-size: 10px;
+}
+
+
+
+@-webkit-keyframes loading {
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@-moz-keyframes loading {
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@-o-keyframes loading {
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes loading {
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+// Double colons. Suck it IE8.
+.clearfix::before,
+.clearfix::after {
+    content: ' ';
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+
+
+
+
+
+
+
+
+	
 </style>
 
 
@@ -1300,8 +1930,41 @@ Zane's Spam
         </figure>
       </section>
 
+	  <!-- music player -->
 
-	    
+	     <article class="player" data-length="326" data-start="0">
+        <audio>
+           
+        </audio>
+        <div class="title">The Glitch Mob - We Can Make the World Stop</div>
+        <div class="details clearfix">
+            <div class="play">
+                <i class="icon">&#9654;</i>
+                <svg version="1.1" id="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36px" height="28px" viewBox="0 0 36 28">
+                    <linearGradient id="dat-purp" gradientUnits="userSpaceOnUse" x1="18" y1="0" x2="18" y2="28">
+                        <stop offset="0" style="stop-color:#c299d8"/>
+                        <stop offset="0.05" style="stop-color:#7a1ea9"/>
+                        <stop offset="1" style="stop-color:#531482"/>
+                    </linearGradient>
+                    <path fill="url(#dat-purp)" d="M29,0c-0.01,0,7,13.947,7,13.938L29,28c0-0.01-25,0-25,0 c-2.209,0-4-1.791-4-4V0H29z" />
+                </svg>
+            </div>
+            <div class="seek rewind"></div>
+            <div class="seek forward"></div>
+            <div class="current-time">0:00</div>
+            <div class="track active">
+                <div class="progress"></div>
+            </div>
+            <div class="track-length">0:00</div>
+            <div class="comments comment has-comments"><div class="comment comment-small"></div></div>
+            <div class="favorite">
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+        </div>
+    </article>
+
+    
 	    
 	    
     </aside>
