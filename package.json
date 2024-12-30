@@ -1,1 +1,7 @@
+mkdir comment-section-backend
+cd comment-section-backend
 
+
+
+npm init -y
+npm install express mongoose body-parser cors
