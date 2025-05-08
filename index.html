@@ -1423,8 +1423,43 @@ Zane's Spam
 
 
 
-<div style="position:relative; width:100%; height:0px; padding-bottom:56.111%"><iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="movie.mov" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Video</title>
+    <style>
+        /* This will maintain the 16:9 aspect ratio for the video */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px; /* Optional: You can adjust the max width as needed */
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9 / 16 = 0.5625) */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
 
+    <h1>My Embedded Video</h1>
+
+    <div class="video-container">
+        <!-- Embed your video URL here (Example for YouTube) -->
+        <iframe src="movie.mov" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+</body>
+</html>
+		
 		
 <div class="gallery">
 		<img src="afield2.jpeg" alt="logo" style="width:500px;height:500px;"> 
