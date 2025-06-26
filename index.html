@@ -1,17 +1,8 @@
 <style>
   .gallery-container {
     width: 500px;
-    overflow-x: auto; /* Changed from 'scroll' to 'auto' */
-    scroll-snap-type: both mandatory;
-    scroll-padding: 1rem;
-    /* Hide scrollbars */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
-  }
-
-  /* Hide scrollbar for Chrome, Safari, and Opera */
-  .gallery-container::-webkit-scrollbar {
-    display: none;
+    overflow-x: hidden; /* Hide overflow to the right */
+    position: relative;
   }
 
   .gallery {
@@ -22,13 +13,23 @@
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
     height: 500px;
+    overflow-x: auto; /* Allow scrolling */
+    scroll-snap-type: x mandatory;
+    scroll-padding: 1rem;
+    scrollbar-width: none; /* Hide scrollbars */
+    -ms-overflow-style: none;
   }
 
-  .active {
-    scroll-snap-type: unset;
+  .gallery::-webkit-scrollbar {
+    display: none;
   }
 
-  li {
+  .gallery.active {
+    scroll-snap-type: none;
+    cursor: grabbing;
+  }
+
+  .gallery li {
     scroll-snap-align: center;
     display: inline-block;
     border-radius: 3px;
@@ -43,36 +44,41 @@
 </div>
 
 <script>
-  const container = document.querySelector('.gallery-container');
-  const slider = document.querySelector('.gallery');
+  const gallery = document.querySelector('.gallery');
   let isDown = false;
   let startX;
   let scrollLeft;
 
-  container.addEventListener('mousedown', e => {
+  gallery.addEventListener('mousedown', (e) => {
     isDown = true;
-    container.classList.add('active');
-    startX = e.pageX - container.offsetLeft;
-    scrollLeft = container.scrollLeft;
+    gallery.classList.add('active');
+    startX = e.pageX - gallery.offsetLeft;
+    scrollLeft = gallery.scrollLeft;
   });
-  
-  container.addEventListener('mouseleave', _ => {
+
+  gallery.addEventListener('mouseleave', () => {
     isDown = false;
-    container.classList.remove('active');
+    gallery.classList.remove('active');
   });
-  
-  container.addEventListener('mouseup', _ => {
+
+  gallery.addEventListener('mouseup', () => {
     isDown = false;
-    container.classList.remove('active');
+    gallery.classList.remove('active');
   });
-  
-  container.addEventListener('mousemove', e => {
+
+  gallery.addEventListener('mousemove', (e) => {
     if (!isDown) return;
     e.preventDefault();
-    const x = e.pageX - container.offsetLeft;
+    const x = e.pageX - gallery.offsetLeft;
     const SCROLL_SPEED = 3;
     const walk = (x - startX) * SCROLL_SPEED;
-    container.scrollLeft = scrollLeft - walk;
+    
+    // Only allow scrolling left (revealing) if at the right edge
+    if (walk > 0 && gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth) {
+      return; // Prevent hiding to the right
+    }
+    
+    gallery.scrollLeft = scrollLeft - walk;
   });
 </script>
 
