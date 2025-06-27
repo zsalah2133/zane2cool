@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zane's Spam</title>
+  <link rel="icon" type="image/x-icon" href="zero-2.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="master-container">
+    <!-- Main Header -->
+    <header class="main-header">
+      <!-- Header content would go here -->
+    </header>
+
+    <!-- Single Column Content -->
+    <div class="single-column-container">
+      <!-- Profile Image -->
+      <section class="profile-image">
+        <img src="whitelogo.jpeg" alt="Profile" class="responsive-image">
+      </section>
+
+      <!-- Bio Hazard Art -->
+      <section class="biohazard">
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡖⠁⠀⠀⠀⠀⠀⠀⠈⢲⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠀⣼⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣧⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⣸⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣇⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⣿⣿⡇⠀⢀⣀⣤⣤⣤⣤⣀⡀⠀⢸⣿⣿⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣔⢿⡿⠟⠛⠛⠻⢿⡿⣢⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠀⣀⣤⣶⣾⣿⣿⣿⣷⣤⣀⡀⢀⣀⣤⣾⣿⣿⣿⣷⣶⣤⡀⠀⠀⠀⠀
+        ⠀⠀⢠⣾⣿⡿⠿⠿⠿⣿⣿⣿⣿⡿⠏⠻⢿⣿⣿⣿⣿⠿⠿⠿⢿⣿⣷⡀⠀⠀
+        ⠀⢠⡿⠋⠁⠀⠀⢸⣿⡇⠉⠻⣿⠇⠀⠀⠸⣿⡿⠋⢰⣿⡇⠀⠀⠈⠙⢿⡄⠀
+        ⠀⡿⠁⠀⠀⠀⠀⠘⣿⣷⡀⠀⠰⣿⣶⣶⣿⡎⠀⢀⣾⣿⠇⠀⠀⠀⠀⠈⢿⠀
+        ⠀⡇⠀⠀⠀⠀⠀⠀⠹⣿⣷⣄⠀⣿⣿⣿⣿⠀⣠⣾⣿⠏⠀⠀⠀⠀⠀⠀⢸⠀
+        ⠀⠁⠀⠀⠀⠀⠀⠀⠀⠈⠻⢿⢇⣿⣿⣿⣿⡸⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠈⠀
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        ⠀⠀⠀⠐⢤⣀⣀⢀⣀⣠⣴⣿⣿⠿⠋⠙⠿⣿⣿⣦⣄⣀⠀⠀⣀⡠⠂⠀⠀⠀
+        ⠀⠀⠀⠀⠀⠈⠉⠛⠛⠛⠛⠉⠀⠀⠀⠀⠀⠈⠉⠛⠛⠛⠛⠋⠁⠀⠀⠀⠀⠀
+      </section>
+
+      <!-- Interests Section -->
+      <section class="info-box">
+        <h2>Artists</h2>
+        <p>Adrianne Lenker, Portishead, Camping in Alaska, Cece Natalie</p>
+        
+        <h2>Movies</h2>
+        <p>Black Swan, Perfect Blue, Dead Poets Society, The Crow</p>
+        
+        <h2>Currently Consuming</h2>
+        <p>Pantheon</p>
+      </section>
+
+      <!-- First Gallery -->
+      <section class="gallery-section">
+        <div class="instruct">
+          <p>swipe left/right to see all the pictures</p>
+        </div>
+        <div class="gallery">
+          <img src="collagebw.jpg" alt="Collage">
+          <img src="wristbw.jpg" alt="Wrist">
+          <img src="tiebw.jpg" alt="Tie">
+        </div>
+      </section>
+
+      <!-- Contact Box -->
+      <section class="contact-box">
+        <iframe width="100%" height="230" src="https://www.youtube.com/embed/6mKEcE7p7aI" frameborder="0" allowfullscreen></iframe>
+      </section>
+
+      <!-- Second Gallery -->
+      <section class="gallery-section">
+        <div class="gallery">
+          <img src="carme.jpeg" alt="Car">
+          <img src="roomcool.jpg" alt="Room">
+          <img src="sew.jpg" alt="Sewing">
+        </div>
+      </section>
+
+      <!-- Sign Off -->
+      <section class="info-box">
+        <p>arrivederci</p>
+      </section>
+
+      <!-- Third Gallery -->
+      <section class="gallery-section">
+        <div class="gallery">
+          <img src="afield2.jpeg" alt="Field">
+          <img src="afield1.jpeg" alt="Field">
+          <img src="afield4.jpeg" alt="Field">
+        </div>
+      </section>
+
+      <!-- More content would continue alternating like this... -->
+
+      <!-- Footer -->
+      <footer>
+        <!-- Footer content -->
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+/* Base Styles */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: verdana, arial, sans-serif, helvetica;
+  background: #0e0e0e;
+  background-image: url("newwhite.png");
+  background-size: 50%;
+  background-attachment: fixed;
+  font-size: 8pt;
+  margin: 0;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  cursor: url("zero-2.png"), auto;
+}
+
+/* Layout */
+.master-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.single-column-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Typography */
+h2 {
+  font-size: 1.2rem;
+  margin: 15px 0 5px;
+  color: #ffaeb1;
+}
+
+p {
+  margin: 10px 0;
+  color: #fff;
+}
+
+/* Images */
+.responsive-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Gallery Styles */
+.gallery-section {
+  margin: 20px 0;
+}
+
+.instruct {
+  text-align: center;
+  font-size: 1.5rem;
+  color: grey;
+  margin-bottom: 15px;
+}
+
+.gallery {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(100% - 20px);
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px 0;
+  scrollbar-width: none;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery img {
+  scroll-snap-align: start;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Box Styles */
+.info-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 5px;
+  color: white;
+}
+
+.contact-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.biohazard {
+  font-family: monospace;
+  white-space: pre;
+  text-align: center;
+  color: grey;
+  font-size: 0.6rem;
+  line-height: 1;
+  margin: 20px 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .master-container {
+    padding: 10px;
+  }
+  
+  .gallery {
+    grid-auto-columns: 100%;
+  }
+  
+  .instruct {
+    font-size: 1.2rem;
+  }
+}
+<style/>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize all galleries on the page
+  const galleries = document.querySelectorAll('.gallery');
+  
+  galleries.forEach(gallery => {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    gallery.addEventListener('mousedown', (e) => {
+      isDown = true;
+      gallery.classList.add('active');
+      startX = e.pageX - gallery.offsetLeft;
+      scrollLeft = gallery.scrollLeft;
+    });
+
+    gallery.addEventListener('mouseleave', () => {
+      isDown = false;
+      gallery.classList.remove('active');
+    });
+
+    gallery.addEventListener('mouseup', () => {
+      isDown = false;
+      gallery.classList.remove('active');
+    });
+
+    gallery.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - gallery.offsetLeft;
+      const walk = (x - startX) * 2; // Adjust scroll speed
+      gallery.scrollLeft = scrollLeft - walk;
+    });
+
+    // Add touch support for mobile
+    gallery.addEventListener('touchstart', (e) => {
+      isDown = true;
+      startX = e.touches[0].pageX - gallery.offsetLeft;
+      scrollLeft = gallery.scrollLeft;
+    });
+
+    gallery.addEventListener('touchend', () => {
+      isDown = false;
+    });
+
+    gallery.addEventListener('touchmove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.touches[0].pageX - gallery.offsetLeft;
+      const walk = (x - startX) * 2;
+      gallery.scrollLeft = scrollLeft - walk;
+    });
+  });
+});
+
+<script/>
+
+
+
+
