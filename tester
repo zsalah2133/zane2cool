@@ -1,113 +1,57 @@
-<script>
+<style>
+.gallery {
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: repeat(10, 500px); /* Vertical layout */
+  grid-template-columns: 1fr;
+  grid-row-gap: 1rem;
+  grid-column-gap: 1rem;
+  overflow: auto;
+  height: 500px;
+  width: 500px; /* Fixed width on desktop */
+  scroll-snap-type: y mandatory;
+  scroll-padding: 1rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  margin: 0 auto; /* Center horizontally */
+}
 
+/* Hide scrollbar for Chrome/Safari */
+.gallery::-webkit-scrollbar {
+  display: none;
+}
 
+.active {
+  scroll-snap-type: unset;
+}
 
+li {
+  scroll-snap-align: center;
+  display: inline-block;
+  border-radius: 3px;
+  font-size: 0;
+}
 
-const slider = document.querySelector('.gallery');
-let isDown = false;
-let startX;
-let scrollLeft;
-
-slider.addEventListener('mousedown', e => {
-  isDown = true;
-  slider.classList.add('active');
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
-slider.addEventListener('mouseleave', _ => {
-  isDown = false;
-  slider.classList.remove('active');
-});
-slider.addEventListener('mouseup', _ => {
-  isDown = false;
-  slider.classList.remove('active');
-});
-slider.addEventListener('mousemove', e => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const SCROLL_SPEED = 3;
-  const walk = (x - startX) * SCROLL_SPEED;
-  slider.scrollLeft = scrollLeft - walk;
-});
-
-
+/* Mobile responsiveness (applies below 768px) */
+@media (max-width: 768px) {
+  .gallery {
+    width: 100%; /* Full width */
+    padding: 0; /* Remove side padding */
+    height: 100vh; /* Optional: Full viewport height */
+  }
+  
+  /* Ensure images fill the container */
+  .gallery li img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Optional: Prevents stretching */
+  }
+}
+<style>
 
 
 
 	
-</script>
-<style>
-  .gallery {
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(10, 500px);
-    grid-template-rows: 1fr;
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-    overflow: auto; /* Changed from 'scroll' to 'auto' */
-    height: 500px;
-    width: 500px;
-    scroll-snap-type: both mandatory;
-    scroll-padding: 1rem;
-    /* Hide scrollbars */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
-  }
-
-  /* Hide scrollbar for Chrome, Safari, and Opera */
-  .gallery::-webkit-scrollbar {
-    display: none;
-  }
-
-  .active {
-    scroll-snap-type: unset;
-  }
-
-  li {
-    scroll-snap-align: center;
-    display: inline-block;
-    border-radius: 3px;
-    font-size: 0;
-  }
-</style>
-
-<script>
-  const slider = document.querySelector('.gallery');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  slider.addEventListener('mousedown', e => {
-    isDown = true;
-    slider.classList.add('active');
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-  });
-  
-  slider.addEventListener('mouseleave', _ => {
-    isDown = false;
-    slider.classList.remove('active');
-  });
-  
-  slider.addEventListener('mouseup', _ => {
-    isDown = false;
-    slider.classList.remove('active');
-  });
-  
-  slider.addEventListener('mousemove', e => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const SCROLL_SPEED = 3;
-    const walk = (x - startX) * SCROLL_SPEED;
-    slider.scrollLeft = scrollLeft - walk;
-  });
-</script>
-
-
-<style>
-
 	html {
   box-sizing: border-box;
 }
@@ -1183,7 +1127,7 @@ Zane's Spam
 
     <!-- Profile Sidebar Begins -->
     <aside class="profile-sidebar">
-	<div style="text-align: left"><img src="whitelogo.jpeg" width="320" height="320" /></div>
+	<div style="text-align: left"><img src="whitelogo2.png" width="756" height="448" /></div>
 
   
       <!-- bio -->
@@ -1193,9 +1137,45 @@ Zane's Spam
       </body>
 
 
-	 
+	<big><big><big>
+        <section class="myspace-url-box">
+     <big></big> <b><big>Artists</b>
+        <p>Adrianne Lenker, Portishead, Camping in Alaska, Cece Natalie</p>
+		<p></p>
+		<p></p>
+		   <b>Movies</b>
+        <p> Black Swan, Perfect Blue, Dead Poets Society, The Crow</p>
+<p></p>
+		<p></p>
+		 <b>Currently Consuming</b>
+        <p> Pantheon</p>
+
+
+	</big>
+		
+      </section>
+
+
+	       <p>&nbsp</p>
+
+
       <!-- Contact Box -->
+
+	       <p>&nbsp</p>
+	       <p>&nbsp</p>
+
+
     
+	<div class="gallery">
+		<img src="collagebw.jpg" alt="logo" style="width:1200px;height:1200px;"> 
+			<img src="wristbw.jpg" alt="logo" style="width:1200px;height:1200px;"> 
+		<img src="tiebw.jpg" alt="logo" style="width:1200px;height:1200px;"> 
+
+	</div>
+	       <p>&nbsp</p>
+
+
+   <p>&nbsp</p>
 
 
       <figure class="contact-images">
@@ -1231,29 +1211,24 @@ Zane's Spam
 
 
    </section>
-      
+
+
+<div class="gallery">
+		<img src="carme.jpeg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="roomcool.jpg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="sew.jpg" alt="logo" style="width:500px;height:500px;"> 
+
+	</div>
+	
+
+		   <p>&nbsp</p>
+
+	    
       <p>
       
       </P>
         
-        
-        <section class="myspace-url-box">
-     <big></big> <b><big>Artists</b>
-        <p>Adrianne Lenker, Portishead, Camping in Alaska, Cece Natalie</p>
-		<p></p>
-		<p></p>
-		   <b>Movies</b>
-        <p> Black Swan, Perfect Blue, Dead Poets Society, The Crow</p>
-<p></p>
-		<p></p>
-		 <b>Currently Consuming</b>
-        <p> Pantheon</p>
-
-
-
-		
-      </section>
-
+      
 
 
 	    
@@ -1283,7 +1258,17 @@ Zane's Spam
        
   
           <p>&nbsp</p>
-	 
+
+
+
+	    		
+<div class="gallery">
+		<img src="afield2.jpeg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="afield1.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="afield4.jpeg" alt="logo" style="width:500px;height:500px;"> 
+
+	</div>
+	
 	 
         <figure class="contact-images">
    
@@ -1303,6 +1288,17 @@ Zane's Spam
 
 
 
+	<div class="gallery">
+		<img src="ny4.jpeg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="ny1.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="ny2.jpeg" alt="logo" style="width:500px;height:500px;"> 
+
+	</div>
+	
+	<center><div style="background-color:transparent;padding:2%;">
+<style="text-align: left"> <"img src="newyork.png" alt="logo" style="width:500px;height:500px;"> 
+	</center>
+	
 
 
 
@@ -1323,6 +1319,17 @@ Zane's Spam
  <p></p>
 	    <p>.</p>
 
+		
+	<div class="gallery">
+		<img src="post1.jpeg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="post2.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="post3.jpeg" alt="logo" style="width:500px;height:500px;"> 
+
+	</div>
+<center><div style="background-color:transparent;padding:2%;">
+	</center>
+	
+	
 	
 
           <p>&nbsp</p>
@@ -1349,6 +1356,19 @@ Zane's Spam
 
 	    
 	    
+	<div class="gallery">
+		<img src="100_1577.jpeg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="100_1583.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="100_1591.jpeg" alt="logo" style="width:500px;height:500px;"> 
+
+	</div>
+
+
+<center><div style="background-color:transparent;padding:2%;">
+<style="text-align: left"> <"img src="aquarium.png" alt="logo" style="width:500px;height:500px;"> 
+
+	</center>
+
   
        
  <p></p>
@@ -1356,9 +1376,102 @@ Zane's Spam
 
 
 	
+
+
+
+
           <p>&nbsp</p>
          <p>&nbsp</p>
           <p>&nbsp</p>
+
+
+
+
+
+
+			<div class="gallery">
+		<img src="art1.jpeg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="art2.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="art3.jpeg" alt="logo" style="width:500px;height:500px;"> 
+
+	</div>
+
+<center><div style="background-color:transparent;padding:2%;">
+<style="text-align: left"> <"img src="art_museum.png" alt="logo" style="width:500px;height:500px;"> 
+
+</center>
+
+	
+	
+
+	
+	
+	
+	
+
+	
+	
+	
+<div class="gallery">
+		<img src="100_1689.jpeg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="skate2.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="shirtpull2.jpeg" alt="logo" style="width:500px;height:500px;"> 
+
+	</div>
+	
+<center><div style="background-color:transparent;padding:2%;">
+	</center>
+	
+	
+	
+	
+	
+	
+	<body>
+		.
+	</body>
+	
+	
+	
+	</center>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+	
+
+	<body>
+		.
+	</body>
+	
+
+
+
+	<div class="gallery">
+		<img src="face.jpg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="mountain.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="lights.jpeg" alt="logo" style="width:500px;height:500px;"> 
+
+	</div>
+
+		<center><div style="background-color:transparent;padding:2%;">
+
+</center>
+
+		
+
+
 	             <p>&nbsp</p>
         <figure class="contact-images">
    
@@ -1394,46 +1507,14 @@ Zane's Spam
 
 
 
- <div class="instruct">
-
-<b><p>swipe left/right to see all the pictures</p></b>
- </div>
-		
-		
 
 
 
 
 
 
-	<div class="gallery">
-		<img src="collagebw.jpg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="wristbw.jpg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="tiebw.jpg" alt="logo" style="width:500px;height:500px;"> 
 
-	</div>
-
-
-   <p>&nbsp</p>
-		
-<div class="gallery">
-		<img src="carme.jpeg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="roomcool.jpg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="sew.jpg" alt="logo" style="width:500px;height:500px;"> 
-
-	</div>
 	
-
-		   <p>&nbsp</p>
-		
-<div class="gallery">
-		<img src="afield2.jpeg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="afield1.jpeg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="afield4.jpeg" alt="logo" style="width:500px;height:500px;"> 
-
-	</div>
-	
-
 
 	<p>.</p>
 		<p>.</p>
@@ -1444,129 +1525,32 @@ Zane's Spam
 	
 	
 	
-	
-	
-	
-
-	
-	
-	
-	<div class="gallery">
-		<img src="ny4.jpeg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="ny1.jpeg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="ny2.jpeg" alt="logo" style="width:500px;height:500px;"> 
-
-	</div>
-	
-	<center><div style="background-color:transparent;padding:2%;">
-<style="text-align: left"> <"img src="newyork.png" alt="logo" style="width:500px;height:500px;"> 
-	</center>
-	
-	
-
-		
-	<div class="gallery">
-		<img src="post1.jpeg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="post2.jpeg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="post3.jpeg" alt="logo" style="width:500px;height:500px;"> 
-
-	</div>
-<center><div style="background-color:transparent;padding:2%;">
-	</center>
-	
-	
-	
-	
-	
-<div class="gallery">
-		<img src="100_1689.jpeg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="skate2.jpeg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="shirtpull2.jpeg" alt="logo" style="width:500px;height:500px;"> 
-
-	</div>
-	
-<center><div style="background-color:transparent;padding:2%;">
-	</center>
-	
-	
-	
-	
-	
+			
 	
 	<body>
 		.
 	</body>
 	
-	
-	
-	</center>
-	
-	
-	
+	<p>.</p>
+		<p>.</p>
+		<p>.</p>
 	
 	
 	
+	<p>.</p>
+		<p>.</p>
+		<p>.</p>
 	
 	
 	
-	<div class="gallery">
-		<img src="100_1577.jpeg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="100_1583.jpeg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="100_1591.jpeg" alt="logo" style="width:500px;height:500px;"> 
-
-	</div>
-
-
-<center><div style="background-color:transparent;padding:2%;">
-<style="text-align: left"> <"img src="aquarium.png" alt="logo" style="width:500px;height:500px;"> 
-
-	</center>
-
-
-
-
-		
-	
-	<body>
-		.
-	</body>
-	
-
-			<div class="gallery">
-		<img src="art1.jpeg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="art2.jpeg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="art3.jpeg" alt="logo" style="width:500px;height:500px;"> 
-
-	</div>
-
-<center><div style="background-color:transparent;padding:2%;">
-<style="text-align: left"> <"img src="art_museum.png" alt="logo" style="width:500px;height:500px;"> 
-
-</center>
-
-
+	<p>.</p>
+		<p>.</p>
+		<p>.</p>
+		       <p>&nbsp</p>
+	       <p>&nbsp</p>
 
 	
-
-	<body>
-		.
-	</body>
-	
-
-
-
-	<div class="gallery">
-		<img src="face.jpg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="mountain.jpeg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="lights.jpeg" alt="logo" style="width:500px;height:500px;"> 
-
-	</div>
-
-		<center><div style="background-color:transparent;padding:2%;">
-
-</center>
-
-		
+	<!--copyhere-->
 		
 <center>
 	
@@ -1651,4 +1635,3 @@ Zane's Spam
 
 	
 </html>
-
