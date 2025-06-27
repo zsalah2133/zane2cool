@@ -47,7 +47,7 @@ li {
     object-fit: cover; /* Optional: Prevents stretching */
   }
 }
-<style>
+
 
 
 
