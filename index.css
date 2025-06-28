@@ -204,7 +204,7 @@ Contact Box
 */
 .textbox {
 	 background-color: black;
-	font-color: white;
+	color: white;
   border: 1px solid rgb(102, 153, 204);
   height: 26px;
   margin-bottom: 24px;
@@ -512,6 +512,7 @@ section a {
   background: black;
   border: 5px solid grey;
 }
+}
 
 .contact-images p {
   color: #ffaeb1;
@@ -549,7 +550,7 @@ section a {
   background: url("assets/images/mobo2.png")
     top black;
   border: 5px solid grey;
-	heigh: 300px;
+	height: 300px;
 }
 
 .contact-images p {
