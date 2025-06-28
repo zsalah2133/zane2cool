@@ -71,38 +71,7 @@ slider.addEventListener('mousemove', e => {
   }
 </style>
 
-<script>
-  const slider = document.querySelector('.gallery');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
 
-  slider.addEventListener('mousedown', e => {
-    isDown = true;
-    slider.classList.add('active');
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-  });
-  
-  slider.addEventListener('mouseleave', _ => {
-    isDown = false;
-    slider.classList.remove('active');
-  });
-  
-  slider.addEventListener('mouseup', _ => {
-    isDown = false;
-    slider.classList.remove('active');
-  });
-  
-  slider.addEventListener('mousemove', e => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const SCROLL_SPEED = 3;
-    const walk = (x - startX) * SCROLL_SPEED;
-    slider.scrollLeft = scrollLeft - walk;
-  });
-</script>
 
 
 
@@ -640,7 +609,7 @@ Blurbs
 Friend Space
 ========================================
 */
-		 background-color: transparent;
+		 /* background-color: transparent; */
 
 .friends header {
   margin-bottom: 6px;
@@ -696,7 +665,7 @@ Friend Space
 Comment Wall
 ========================================
 */
-		 background-color: transparent;
+		 /* background-color: transparent; */
 
 .comment-wall .main-section-header {
   margin-bottom: 3px;
@@ -1038,7 +1007,6 @@ section a {
   background: black;
 .contact-box2 {
   background: black;
-    top black;
   border: 5px solid grey;
 }
 
@@ -1051,8 +1019,6 @@ section a {
 .contact-images p:hover {
   cursor: pointer;
   text-decoration: underline;
-}")
-    top black;
   border: 5px solid grey;
 }
 
@@ -1077,7 +1043,7 @@ section a {
 
 
 .mobo {
-  background: url("mobo2.png")
+  background: url("assets/images/mobo2.png")
     top black;
   border: 5px solid grey;
 }
@@ -1116,7 +1082,7 @@ section a {
 	
 
 	.skullheart {
-  background: url("skullheart.jpg")
+  background: url("assets/images/skullheart.jpg")
     top black;
 		height: 185px;
   border: 5px red;
@@ -1137,7 +1103,7 @@ section a {
 	
 
 	.melol {
-  background: url("IMG_4971.jpeg")
+  background: url("assets/images/IMG_4971.jpeg")
     top black;
 		height: 210px;
   border: 5px red;
@@ -1155,7 +1121,7 @@ section a {
 }
 
 body {
-      cursor: url("zero-2.png"), auto;
+      cursor: url("assets/images/zero-2.png"), auto;
 }
 
 
@@ -1174,7 +1140,7 @@ body {
 <title>
 Zane's Spam 
 </title>
-	  <link rel="icon" type="image/x-icon" href="zero-2.png">
+	  <link rel="icon" type="image/x-icon" href="assets/images/zero-2.png">
 </head>
 
 
@@ -1188,7 +1154,7 @@ Zane's Spam
 
     <!-- Profile Sidebar Begins -->
     <aside class="profile-sidebar">
-	<div style="text-align: left"><img src="socoolblack.jpeg" width="300" height="300" /></div>
+	<div style="text-align: left"><img src="assets/images/socoolblack.jpeg" width="300" height="300" /></div>
 
   
       <!-- bio -->
@@ -1425,9 +1391,9 @@ Zane's Spam
 
 		
 <div class="gallery">
-		<img src="collagebw.jpg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="wristbw.jpg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="tiebw.jpg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/collagebw.jpg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="assets/images/wristbw.jpg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/tiebw.jpg" alt="logo" style="width:500px;height:500px;"> 
 
 	</div>
 	
@@ -1437,9 +1403,9 @@ Zane's Spam
 
 		
 <div class="gallery">
-		<img src="carme.jpeg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="roomcool.jpg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="sew.jpg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/carme.jpeg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="assets/images/roomcool.jpg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/sew.jpg" alt="logo" style="width:500px;height:500px;"> 
 
 	</div>
 	
@@ -1448,9 +1414,9 @@ Zane's Spam
 		
 		
 <div class="gallery">
-		<img src="afield2.jpeg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="afield1.jpeg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="afield4.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/afield2.jpeg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="assets/images/afield1.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/afield4.jpeg" alt="logo" style="width:500px;height:500px;"> 
 
 	</div>
 	
@@ -1473,9 +1439,9 @@ Zane's Spam
 	
 	
 	<div class="gallery">
-		<img src="ny4.jpeg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="ny1.jpeg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="ny2.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/ny4.jpeg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="assets/images/ny1.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/ny2.jpeg" alt="logo" style="width:500px;height:500px;"> 
 
 	</div>
 	
@@ -1486,9 +1452,9 @@ Zane's Spam
 
 		
 	<div class="gallery">
-		<img src="post1.jpeg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="post2.jpeg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="post3.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/post1.jpeg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="assets/images/post2.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/post3.jpeg" alt="logo" style="width:500px;height:500px;"> 
 
 	</div>
 <center><div style="background-color:transparent;padding:2%;">
@@ -1499,9 +1465,9 @@ Zane's Spam
 	
 	
 <div class="gallery">
-		<img src="100_1689.jpeg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="skate2.jpeg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="shirtpull2.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/100_1689.jpeg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="assets/images/skate2.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/shirtpull2.jpeg" alt="logo" style="width:500px;height:500px;"> 
 
 	</div>
 	
@@ -1530,9 +1496,9 @@ Zane's Spam
 	
 	
 	<div class="gallery">
-		<img src="100_1577.jpeg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="100_1583.jpeg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="100_1591.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/100_1577.jpeg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="assets/images/100_1583.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/100_1591.jpeg" alt="logo" style="width:500px;height:500px;"> 
 
 	</div>
 
@@ -1552,9 +1518,9 @@ Zane's Spam
 	
 
 			<div class="gallery">
-		<img src="art1.jpeg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="art2.jpeg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="art3.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/art1.jpeg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="assets/images/art2.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/art3.jpeg" alt="logo" style="width:500px;height:500px;"> 
 
 	</div>
 
@@ -1574,9 +1540,9 @@ Zane's Spam
 
 
 	<div class="gallery">
-		<img src="face.jpg" alt="logo" style="width:500px;height:500px;"> 
-			<img src="mountain.jpeg" alt="logo" style="width:500px;height:500px;"> 
-		<img src="lights.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/face.jpg" alt="logo" style="width:500px;height:500px;"> 
+			<img src="assets/images/mountain.jpeg" alt="logo" style="width:500px;height:500px;"> 
+		<img src="assets/images/lights.jpeg" alt="logo" style="width:500px;height:500px;"> 
 
 	</div>
 
@@ -1614,7 +1580,7 @@ Zane's Spam
 
 
 	      
-        <iframe width="410" height="230" src="https://www.youtube.com/watch?v=MycU2KoqaWU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- <iframe width="410" height="230" src="https://www.youtube.com/watch?v=MycU2KoqaWU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
 
       </section>
@@ -1658,7 +1624,6 @@ Zane's Spam
 
 	  
 
-<style="text-align: left"> <"img src="thanks.png" alt="logo" style="width:600px;height:400px;"> 
   </div>
   <!-- Footer -->
 
