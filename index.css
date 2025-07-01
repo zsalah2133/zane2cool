@@ -289,7 +289,7 @@ body {
     transparent 50%,
     rgba(255, 113, 167, 0.5) 50%
   );*/
-  background-image: url("blackgroundjpeg");
+  background-image: url("assets/images/blackslide.png");
   background-size: 50%;
   background-attachment: fixed;
   font-family: sans-serif, helvetica;
